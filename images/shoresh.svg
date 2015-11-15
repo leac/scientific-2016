@@ -1,0 +1,15 @@
+<svg width="162" height="43" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    background
+  </title>
+  <path fill="#fff" d="M-1-1h164v45H-1z"/>
+  <g>
+    <title>
+      Layer 1
+    </title>
+    <path d="M.376 23.862L11 37 24.5.5l133.997.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#217772" fill="#fff"/>
+    <text text-anchor="left" font-family="courier, Helvetica, Arial, sans-serif" font-size="16" y="12.613" x=".126" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000">
+      2
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <desc>
+	Original by @simurai: http://files.simurai.com/misc/svg/svg-icon.svg - http://jsfiddle.net/simurai/dQbvD/
+	Modified by @erikdahlstrom - http://jsfiddle.net/cSEFk/
+    </desc>
+    <defs>
+	<style>
+	    rect, line { shape-rendering: crispEdges; }
+	    svg .icon { display: none }
+	    svg .icon:target { display: inline } 
+	</style>
+    </defs>
+    <svg viewBox="0 0 16 16">
+	<g id="chart" class="icon">
+	    <rect x="6" width="4" height="16"/>
+	    <rect x="12" y="4" width="4" height="12"/>
+	    <rect x="0" y="8" width="4" height="8"/>
+	</g>
+    </svg>
+
+    <svg viewBox="0 0 16 16">
+	<g id="plus" class="icon">
+	    <mask id="m" x="0" y="0" width="1" height="1">
+		<circle cx="8" cy="8" r="8" fill="white"/>
+		<line x1="8" y1="3" x2="8" y2="13" stroke="black" stroke-width="2"/>
+		<line x1="3" y1="8" x2="13" y2="8" stroke="black" stroke-width="2"/>
+	    </mask>
+	    <rect width="16" height="16" mask="url(#m)"/>
+	</g>
+    </svg>
+
+    <!-- shoresh-->
+    <svg viewBox="0 0 162 43">
+	<g id="shoresh-icon" class="icon">
+	    <title>
+		background
+	    </title>
+	    <path fill="#fff" d="M-1-1h164v45H-1z"/>
+	    <g>
+		<title>
+		    Layer 1
+		</title>
+		<path d="M.376 23.862L11 37 24.5.5l133.997.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#217772" fill="#fff"/>
+		<text text-anchor="left" font-family="courier, Helvetica, Arial, sans-serif" font-size="16" y="12.613" x=".126" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000">
+		    2
+		</text>
+	    </g>
+	</g>
+    </svg>
+
+	
+    <!-- mavhena -->
+    <svg viewBox="0 0 56 53">
+	
+	<g id="mavhena-icon" class="icon">
+	    <style type="text/css">
+		.st0{fill:#217772;}
+		.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+		.st2{fill:#64A09D;}
+	    </style>
+	    <g id="tube1">
+		<g id="tube">
+		    <path id="Tfill" class="st0" d="M10.5,31.2h7.1v18.7c0,0,0.3,2.6-3.5,2.6c-3.2,0-3.5-2.6-3.5-2.6V31.2z"/>
+		    <path id="Tpath" class="st1" d="M10.5,16.6v32.2c0,0,0.1,3.8,3.5,3.7c3.6-0.1,3.5-3.7,3.5-3.7V16.6H10.5z"/>
+		    <line id="upLine" class="st1" x1="8" y1="16.6" x2="20" y2="16.6"/>
+		    <line id="iLits" class="st2" x1="12.1" y1="33.1" x2="12.1" y2="46.1"/>
+		</g>
+		<circle id="bub1" class="st0" cx="13.1" cy="14" r="2"/>
+		<circle id="bub2" class="st0" cx="17.1" cy="9" r="0.9"/>
+	    </g>
+	    <g id="tube2">
+		<g id="tube_1_">
+		    <path id="Tfill_1_" class="st0" d="M24.8,26.2h7.1v23.7c0,0,0.3,2.6-3.5,2.6c-3.2,0-3.5-2.6-3.5-2.6V26.2z"/>
+		    <path id="Tpath_1_" class="st1" d="M24.8,16.6v32.2c0,0,0.1,3.8,3.5,3.7c3.6-0.1,3.5-3.7,3.5-3.7V16.6H24.8z"/>
+		    <line id="upLine_1_" class="st1" x1="22.2" y1="16.6" x2="34.2" y2="16.6"/>
+		    <line id="iLits_1_" class="st2" x1="26.3" y1="28.1" x2="26.3" y2="45.1"/>
+		</g>
+		<circle id="bub1_1_" class="st0" cx="26" cy="15" r="1.1"/>
+	    </g>
+	    <g id="tube3">
+		<g id="tube_2_">
+		    <path id="Tfill_2_" class="st0" d="M38.7,29.2h7.1v20.7c0,0,0.3,2.6-3.5,2.6c-3.2,0-3.5-2.6-3.5-2.6V29.2z"/>
+		    <path id="Tpath_2_" class="st1" d="M38.7,16.6v32.2c0,0,0.1,3.8,3.5,3.7c3.6-0.1,3.5-3.7,3.5-3.7V16.6H38.7z"/>
+		    <line id="upLine_2_" class="st1" x1="36.2" y1="16.6" x2="48.2" y2="16.6"/>
+		    <line id="iLits_2_" class="st2" x1="40.3" y1="31.1" x2="40.3" y2="48.1"/>
+		</g>
+		<circle id="bub1_2_" class="st0" cx="39.9" cy="11.9" r="2"/>
+		<circle id="bub2_1_" class="st0" cx="43.5" cy="2.5" r="2.4"/>
+		<path class="st0" d="M45.2,24.4c-0.2-0.2-0.5-0.3-0.8-0.3c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.3,0,0.6-0.1,0.8-0.3
+		V24.4z"/>
+	    </g>
+	    <g id="Layer_5">
+		<rect x="53" y="16" width="3" height="7.9"/>
+		<rect x="0" y="16" width="3" height="7.9"/>
+	    </g>
+	</g>
+    </svg>
+	
+	
+	
+	
+</svg>

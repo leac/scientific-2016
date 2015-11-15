@@ -1,0 +1,739 @@
+/* -----------------------------------------*/
+/* ---------->>> 960px and Up <<<-----------*/
+/* -----------------------------------------*/
+@media only screen and (min-width: 960px){
+    /* -----------------------------------*/
+    /* ---------->>> HEADER <<<-----------*/
+    /* -----------------------------------*/
+    .site-header{
+	width: 75rem;
+	margin: 5rem auto 1rem;
+	display: flex;
+	justify-content: space-between;
+	/*same code with prefix - for ios*/
+	display: -webkit-flex;
+	-webkit-justify-content: space-between;
+
+	/*for android 4.2 and less*/
+	/*http://stackoverflow.com/questions/20109319/flexbox-setting-for-cordova-on-samsung-galaxy-tab-android-4-1-2*/
+/*	display: -webkit-box;
+	 -webkit-box-pack: justify;*/
+    }
+    .site-header .scientific-logo{
+	width: 34rem;
+	height: 14rem;
+	margin: 0;
+    }
+    .site-branding{
+	width: 80%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	/*same code with prefix - for ios*/
+	display: -webkit-flex;
+	-webkit-align-items: flex-end;
+	-webkit-justify-content: flex-start;
+	/*for android 4.2 and less
+	display: -webkit-box;
+	 -webkit-box-pack: justify;*/
+    }
+    .main-navigation {
+	margin: 0 2rem 2.6rem 0;
+    }
+    .main-navigation a {
+	color: #000;
+	line-height: 1;
+	border-left: 1px solid;
+	padding: 0 1rem;
+    }
+    .main-navigation .menu-item:last-child a{
+	border: 0;
+    }
+    .search-form,
+    .left-header{
+	display: inline-block;
+    }
+    /* ------->>> search <<<------*/
+    .popover_parent{
+	display: inline-block;
+	margin: 0.7rem 13rem 0 0;
+
+    }
+    .search-btn {
+	display: block;
+	width: 4.5rem;
+	height: 4.5rem;
+	border: 1px solid #d8d8d8;
+	background-color: #fff;
+	background-position: 0 -302px;
+	border-radius: 50%;
+    }
+    .active .search-btn{
+	background-position: -45px -302px;
+    }
+    .site-header{
+	position: relative;
+    }
+
+    .site-header .search-form{
+	position: absolute;
+	bottom: -20rem;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	padding: 6rem 0;
+	margin-top: 0;
+	background-color: #217772;
+	box-shadow: 500px 0 0 0 #217772, -500px 0 0 0 #217772;
+    }
+    .site-header input.search-field[type="search"] {
+	color: #fff;
+    }
+    .site-header .active .search-form{
+	visibility: visible;
+	opacity: 1;
+    }
+
+    /* -----------------------------------*/
+    /* --------->>> Site Footer <<<-------*/
+    /* -----------------------------------*/
+    .footer-logos{
+	max-width: 70rem;
+	padding-right: 10rem;
+	padding-left: 10rem;
+    }
+    .footer-logos .scientific-logo{
+	width: 26.3rem;
+	height: 11rem;
+    }
+    .site-header .ort-logo,
+    .footer-logos .ort-logo{
+	width: 18.4rem;
+	height: 9.6rem;
+    }
+
+    /*footer-widgets*/
+    .footer-widgets {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-strat;
+	/*same code with prefix - for ios*/
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-webkit-align-items: flex-start;
+	padding: 4rem calc(50% - 37.5rem);
+    }
+    .widget_nav_menu {
+	order: 4;
+	-webkit-order: 4;
+	width: 49%;
+	margin: 8.5rem 0 0 0;
+    }
+    .gform_widget {
+	order: 3;
+	-webkit-order: 3;
+	width: 51%;
+	margin-bottom: 0;
+    }
+    .gform_widget .gform_wrapper{
+	margin: 0;
+    }
+    .gform_heading{
+	min-width: 35rem;
+    }
+    .widget_quotescollection{
+	position: relative;
+	background-color: #404040;
+	padding: 3rem 12rem 3rem 1rem;
+    }
+    .quotescollection-quote:before{
+	content: "!";
+	position: absolute;
+	font-family: arial;
+	line-height: 1.4;
+	font-size: 5rem;
+	background-color: #217772;
+	padding: 0 2.8rem;
+	right: 2rem;
+	top: 50%;
+	transform: translate(0 , -50%);
+	-webkit-transform: translate(0 , -50%);
+    }
+    .widget_quotescollection p{
+	margin-bottom: 0;
+    }
+    .widget_quotescollection .quotescollection-quote footer.attribution{
+	margin-bottom: 0;
+	font-size: 1.4rem;
+    }
+    .widget_quotescollection .quotescollection-quote cite.source {
+	font-style: normal;
+    }
+    .widget_quotescollection .quotescollection-quote p,
+    .widget_quotescollection footer.attribution{
+	display: inline;
+    }
+    /*newsletter form*/
+    .gform_wrapper form {
+	margin-bottom: 0;
+    }
+
+    .gform_widget .gform_wrapper  .gform_footer{
+	margin: 0 0.5rem 0 0;
+    }
+
+    body .gform_widget .gform_wrapper label.gfield_label + div.ginput_container{
+	margin: 0;
+    }
+    .gform_widget .gfield.gfield_error.field_sublabel_below.field_description_below {
+	width: 100%;
+    }
+    .gform_widget .gforms_confirmation_message{
+	margin-top: 8.5rem;
+    }
+    /*menu - contact us and facebook*/
+    .widget_nav_menu .menu {
+	justify-content: flex-end;
+    }
+    .widget_nav_menu .menu-item:last-child{
+	margin-right: 2.5rem;
+    }
+
+    /* -----------------------------------*/
+    /* ----->>> Designed Tittles <<<------*/
+    /* -----------------------------------*/
+    /*block title line-through*/
+    .title-articles:before,
+    .title-fast_science:before,
+    .title-columns_and_opinions:before{
+	width: 55rem;
+    }
+    .page-header .title-articles:before,
+    .page-header .title-fast_science:before,
+    .page-header .title-columns_and_opinions:before,
+    .page-title:before,
+    .page h1.entry-title:before{
+	width: 75rem;
+    }
+    .title-columns_and_opinions:after{
+	background-color: transparent;
+    }
+
+    /* -----------------------------------*/
+    /* --------->>> Front Page <<<--------*/
+    /* -----------------------------------*/
+
+    /* --------->>> Block Design <<<--------*/
+    .block,
+    .home .widget-area{
+	width: 75rem;
+	padding: 0;
+    }
+
+    /*posts wrapper*/
+    .article-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	/*same code with prefix - for iphone*/
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-webkit-justify-content: space-between;
+    }
+    .block.block-newest-posts{
+	width: 100%;
+    }
+    .article-wrapper .post{
+	width: 33.2%;
+    }
+    .block-fast_science .article-wrapper .post {
+	width: 22.5%;
+    }
+    .block-columns_and_opinions .article-wrapper .post {
+	width: 33%;
+    }
+    /*.entry-title,*/
+    body:not(.single) .entry-summary {
+	padding-left: 3rem;
+    }
+
+    .block-newest-posts .entry-title,
+    .block-newest-posts .entry-meta,
+    .block-newest-posts .entry-summary{
+	display: block;
+	margin: 0 auto;
+	/*width: 80%;*/
+    }
+    .block-latest-issues .entry-header img{
+	width: auto;
+    }
+    /* --------->>> Block Newst Post <<<--------*/
+    .block-newest-posts{
+	margin-top: 0;
+    }
+    .block-newest-posts .entry-header img,
+    .single .entry-header img{
+	max-width: 119.9rem;
+	max-height: 58rem;
+    }
+    .block-newest-posts .tags-links{
+	position: static;
+	border-right: 0;
+	float: left;
+    }
+    .block-newest-posts .entry-summary{
+	 background-color: rgba(255, 255, 255, 0.85);
+	 padding-left: 2rem;
+    }
+    .block-newest-posts .post{
+	position: relative;
+    }
+    .block-newest-posts .article-wrapper{
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 80%;
+    }
+    /* --------->>> Block  Articles <<<--------*/
+    .block-articles .post-authors-wrapper .author{
+	display: inline-block;
+    }
+    /* --------->>> Block  Columns and Opinions <<<--------*/
+    .block-columns_and_opinions .post-authors-wrapper {
+/*	display: inline-block;
+	float: right;
+	margin: 0.8rem 0 1rem 2rem;
+	max-width: 10rem;*/
+    }
+
+    /* --------->>> Block  Latest Issues <<<--------*/
+    .block.block-latest-issues{
+	width: 100%;
+	padding: 4rem calc(50% - 37rem);
+	background-color: #dfdfdf;
+    }
+    .issues-wrapper{
+	margin-top: 2rem;
+    }
+    .issues-wrapper .entry-header{
+	width: 30%;
+	margin-left: 3%;
+	max-width: 23rem;
+	font-size: 1.7rem;
+	text-align: right;
+	float: right;
+    }
+    .issues-wrapper .entry-header:last-of-type{
+	display: none;
+    }
+    .issues-wrapper .entry-header a{
+	display: block;
+	width: 100%;
+	color: inherit;
+	text-decoration: none;
+    }
+    .issues-wrapper .entry-header img{
+	width: 100%;
+    }
+    .more-issues {
+	background-color: #217872;
+	background-image: url("images/former-issues2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+	float: right;
+	height: 28.8rem;
+	overflow: hidden;
+	text-decoration: none;
+	text-indent: -9999px;
+	width: 20rem;
+	background-position: center;
+    }
+
+    /* --------->>> Block  Older Issues <<<--------*/
+    .home .widget-area{
+	display: flex;
+	/*same code with prefix - for ios*/
+	display: -webkit-flex;
+	margin: 0 auto;
+    }
+    .block-title-plain{
+	background-color: #217872;
+	font-size: 1.8rem;
+	font-weight: 400;
+	color: #fff;
+	display: inline-block;
+	padding: 1.5rem 2.5rem;
+	margin: 0 0 3rem 0;
+    }
+    .block-title-plain a{
+	color: inherit;
+	text-decoration: none;
+    }
+    /* --------->>> Block  5 Most Readed <<<--------*/
+    .block.popular-posts,
+    .block.block-our-authors{
+	width: 50%;
+	text-align: right;
+    }
+    .wpp-list{
+	padding-right: 0;
+	margin: 0;
+    }
+    .wpp-list  li{
+	position: relative;
+	padding: 1rem 5rem;
+	counter-increment: step-counter;
+	line-height: 1.2;
+	margin-bottom: 2rem;
+    }
+    .wpp-list  li:before{
+	content: counter(step-counter);
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	color: #fff;
+	text-decoration: none;
+	line-height: 30px; /*using pixeles because of IE*/
+	text-align: center;
+	background-color: #217872;
+	display: block;
+    }
+    .wpp-post-title,
+    .wpp-post-title:hover,
+    .wpp-post-title:visited{
+	color: #000;
+	text-decoration: none;
+    }
+    /* --------->>> Block  Our authors <<<--------*/
+    .block-our-authors {
+	border-right: 0.1rem solid #b4b4b4;
+	padding-right: 5rem;
+    }
+    .authors {
+	margin-bottom: 3rem;
+	clear: both;
+    }
+
+    /* -----------------------------------*/
+    /* --------->>> Tag list <<<--------*/
+    /* -----------------------------------*/
+    body:not(.home):not(.single) .site-content{
+	margin-top: 6rem;
+    }
+    body.archive .site-content,
+    body.search-results .site-content,
+    .page .site-content{
+	padding: 0;
+	/*max-width: 96rem;*/
+	margin-right: auto;
+	margin-left: auto;
+    }
+    body:not(.home):not(.single) .post{
+	width: 32%;
+    }
+    body.search-results .site-main .post{
+	width: 24%;
+    }
+    body.tag-fast_science .site-content .post{
+	width: 24%;
+    }
+    /* -----------------------------------*/
+    /* --------->>> Single Post <<<--------*/
+    /* -----------------------------------*/
+    /*alignment ordering*/
+    .block-newest-posts .article-wrapper,
+    .single .entry-top-wrapper,
+    .single .entry-content,
+    .goodtoknow,
+    .about-authors,
+    .fb-comments-wrapper,
+    .comments-area,
+    .wp_rp_wrap,
+    .entry-footer .tags-links{
+	margin-right: calc( 50% - 37.5rem);
+	margin-left: calc( 50% - 37.5rem);
+
+    }
+    .single .entry-top-wrapper{
+	width: 75rem;
+    }
+    .single .entry-article-summary,
+    .reading{
+	padding: 1rem calc( 50% - 37rem);
+    }
+
+    .single .entry-header {
+	min-height: 20rem;
+    }
+    /*big title image*/
+    .single .entry-header,
+    .single .entry-article-summary{
+	position: relative;
+
+	margin-top: -1px; /*until lea will take it out by code when there's no maamarim expert'*/
+    }
+    /*.single .entry-header img ~ .entry-top-wrapper .entry-title,*/
+    .single .entry-header img ~ .entry-top-wrapper .entry-summary{
+	text-align: right;
+    }
+
+
+    .entry-top-wrapper{
+	position: absolute;
+	bottom: 0;
+    }
+    .entry-top-wrapper .entry-meta{
+	width: auto;
+    }
+
+    .goodtoknow {
+	margin: 5rem 6rem;
+	padding: 6rem 2rem;
+    }
+    .goodtoknow h3:first-of-type {
+	padding: 0.5rem 1rem;
+	margin: 0 auto 3rem;
+	width: 30%;
+    }
+    /*comments*/
+        .children{
+	margin-right: 11rem;
+    }
+
+    /* --------------------------------*/
+    /* ------->>> Search Results<<<----*/
+    /* --------------------------------*/
+    .search-no-results .no-results {
+	background-image: url("images/search_big.jpg");
+	padding-bottom: 34%;
+    }
+    .search-no-results .no-results h2,
+    .search-no-results .no-results p,
+    .search-no-results input.search-field[type="search"]{
+	padding-right: calc(50% - 35.5rem);
+    }
+
+}
+
+
+/* -----------------------------------------*/
+/* ---------->>> 1200px and Up <<<----------*/
+/* -----------------------------------------*/
+@media only screen and (min-width: 1200px){
+    /* -----------------------------------*/
+    /* ---------->>> HEADER <<<-----------*/
+    /* -----------------------------------*/
+    .site-header,
+    .block,
+    .home .widget-area{
+	width: 94rem;
+    }
+    /* -----------------------------------*/
+    /* --------->>> Site Footer <<<-------*/
+    /* -----------------------------------*/
+    .footer-widgets {
+	padding: 4rem calc(50% - 47rem);
+    }
+    .footer-logos{
+	padding-right: calc(50% - 40rem);
+	padding-left: calc(50% - 40rem);
+    }
+    .site-header .ort-logo,
+    .footer-logos .ort-logo{
+	padding-bottom: 0;
+    }
+
+    /* -----------------------------------*/
+    /* --------->>> Front Page <<<--------*/
+    /* -----------------------------------*/
+    .block-newest-posts .entry-title,
+    .block-newest-posts .entry-meta,
+    .block-newest-posts .entry-summary,
+    .block:not(.block-newest-posts):not(.block-latest-issues),
+    .footer-logos{
+	max-width: 94rem;
+    }
+    /* --------->>> Block Newst Post <<<--------*/
+    .block-newest-posts .entry-header img,
+    .single .entry-header img{
+	max-width: 159.9rem;
+    }
+    .block-columns_and_opinions .entry-meta{
+	display: block;
+	float: right;
+	max-width: 9rem;
+	width: 100%;
+	margin: 0.3rem 0 0 2rem;
+    }
+    .block.block-columns_and_opinions .entry-title,
+    .block.block-columns_and_opinions .entry-summary{
+	/*display: inline;*/
+    }
+    .block-fast_science .article-wrapper .post {
+	width: 18%;
+    }
+    /* --------->>> Block Latest-issues <<<--------*/
+
+    .block.block-latest-issues{
+	padding: 4rem calc(50% - 46rem);
+    }
+    .issues-wrapper .entry-header:last-of-type{
+	display: block;
+    }
+    .issues-wrapper .entry-header{
+	width: 23%;
+    }
+    .more-issues{
+	height: 27.5rem;
+    }
+        /* --------->>> Block  Columns and Opinions <<<--------*/
+    .block-columns_and_opinions .post-authors-wrapper {
+	display: inline-block;
+	float: right;
+	margin: 0.8rem 0 1rem 1rem;
+	max-width: 10rem;
+    }
+    /* -----------------------------------*/
+    /* --------->>> Tag list <<<--------*/
+    /* -----------------------------------*/
+    body.archive .site-content,
+    body.search-results .site-content,
+    .page .site-content{
+	width: 94rem;
+	margin: 0 auto;
+    }
+    body.tag-fast_science .site-content .post{
+	width: 18%;
+	margin-left: 1%;
+    }
+    /* -----------------------------------*/
+    /* ----------->>> Single  <<<---------*/
+    /* -----------------------------------*/
+    /*alignment ordering*/
+    .block-newest-posts .article-wrapper,
+    .single .entry-top-wrapper,
+    .single .entry-content,
+    .goodtoknow,
+    .about-authors,
+    .fb-comments-wrapper,
+    .comments-area,
+    .wp_rp_wrap,
+    .entry-footer .tags-links{
+	margin-right: calc( 50% - 46rem);
+	margin-left: calc( 50% - 46rem);
+    }
+    .block-newest-posts .article-wrapper,
+    .single .entry-top-wrapper{
+	width: 92rem;
+    }
+    .single .entry-article-summary,
+    .reading{
+	padding: 1rem calc( 50% - 44rem);
+    }
+        /* --------------------------------*/
+    /* ------->>>  ISSSUES  <<<--------*/
+    /* --------------------------------*/
+    .category-all-issues .entry-header{
+	width: 22%;
+	margin-left: 1%;
+    }
+
+}
+
+
+
+/* -----------------------------------------*/
+/* ---------->>> 1600px and Up <<<----------*/
+/* -----------------------------------------*/
+
+@media only screen and (min-width: 1600px){
+    /* -----------------------------------*/
+    /* ---------->>> HEADER <<<-----------*/
+    /* -----------------------------------*/
+    .site-header,
+    .block,
+    .home .widget-area{
+	width: 120rem;
+    }
+    /* -----------------------------------*/
+    /* --------->>> Site Footer <<<-------*/
+    /* -----------------------------------*/
+    .footer-widgets {
+	padding: 4rem calc(50% - 60rem);
+    }
+    .footer-logos{
+	max-width: 70rem;
+	padding-right: calc(50% - 50rem);
+	padding-left: calc(50% - 50rem);
+    }
+    .widget_text{
+	max-width: 100rem;
+	margin: 0 auto;
+    }
+    /* -----------------------------------*/
+    /* --------->>> Front Page <<<--------*/
+    /* -----------------------------------*/
+    .block-newest-posts .entry-title,
+    .block-newest-posts .entry-meta,
+    .block-newest-posts .entry-summary,
+    .block:not(.block-newest-posts):not(.block-latest-issues),
+    .footer-logos{
+	max-width: 118rem;
+    }
+    /* --------->>> Block Newst Post <<<--------*/
+    .block-newest-posts .entry-header img,
+    .single .entry-header img{
+	max-width: 100%;
+    }
+    .block-newest-posts .article-wrapper{
+	margin-right: calc( 50% - 59rem);
+	margin-left: calc( 50% - 59rem);
+    }
+    .block-newest-posts .article-wrapper{
+	width: 118rem;
+    }
+    /* --------->>> Block Latest-issues <<<--------*/
+
+    .block.block-latest-issues{
+	padding: 4rem calc(50% - 57rem);
+    }
+    .issues-wrapper .entry-header{
+	width: 25%;
+	margin-left: 5%;
+    }
+    .more-issues{
+	width: 22.8rem;
+	height: 29.7rem;
+
+    }
+    /* -----------------------------------*/
+    /* --------->>> Tag list <<<--------*/
+    /* -----------------------------------*/
+    body.archive .site-content,
+    body.body.search-results .site-content{
+	width: 120rem;
+	margin: 0 auto;
+    }
+    .page-header .title-articles:before,
+    .page-header .title-fast_science:before,
+    .page-header .title-columns_and_opinions:before,
+    .page-title:before,
+    .page h1.entry-title:before{
+	width: 95rem;
+    }
+    /* --------------------------------*/
+    /* ------->>>  ISSSUES  <<<--------*/
+    /* --------------------------------*/
+    .category-all-issues .entry-header{
+	width: 18%;
+	margin-left: 1%;
+    }
+
+}
+
+

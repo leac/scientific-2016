@@ -1,0 +1,304 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: scientific_2016\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2015-11-12 14:57+0200\n"
+"PO-Revision-Date: 2015-11-12 14:57+0200\n"
+"Last-Translator: Lea - Ort Israel <leac@mapa.ort.org.il>\n"
+"Language-Team: \n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2;"
+"_nx\n"
+"X-Loco-Target-Locale: he_IL\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "ס-ל-י-ח-ה. מה אתה עושה פה?? <!-- אופס! הדף אינו נמצא -->"
+
+#: ../404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: ../category-one-issue.php:23
+msgid "opinions"
+msgstr "מדורים-וטורים"
+
+#: ../category-one-issue.php:26
+msgid "fast_science"
+msgstr "מדע-מהיר"
+
+#: ../comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "תגובה אחת על &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s תגובות על &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:40 ../comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:43 ../comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:44 ../comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:77
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:17
+msgid "Scientific American"
+msgstr ""
+
+#: ../footer.php:18 ../header.php:43
+msgid "Ort site"
+msgstr ""
+
+#: ../footer.php:25
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "האתר הוקם על תשתית %s"
+
+#: ../footer.php:26
+msgid "Site built by:"
+msgstr "אפיון, עיצוב ובניית האתר: "
+
+#: ../footer.php:26
+msgid "Credits technology team"
+msgstr "יחידת טכנולוגיות אינטרנט"
+
+#: ../footer.php:27
+msgid "Ort Israel"
+msgstr "אורט ישראל"
+
+#: ../front-page.php:62 ../front-page.php:68
+msgid "Older issues"
+msgstr "גליונות קודמים"
+
+#: ../functions.php:53 ../header.php:37
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:91 ../inc/front-page-blocks.php:64
+msgid "articles"
+msgstr "מאמרים"
+
+#: ../functions.php:117
+msgid "Sidebar Front Page"
+msgstr ""
+
+#: ../functions.php:126
+msgid "Sidebar Footer"
+msgstr ""
+
+#: ../header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: ../header.php:45
+msgid "?"
+msgstr ""
+
+#: ../inc/custom-fields.php:75
+msgid "default featured image"
+msgstr ""
+
+#: ../inc/front-page-blocks.php:53
+msgid "more"
+msgstr "נוספים"
+
+#: ../inc/front-page-blocks.php:67
+msgid "fast ones"
+msgstr "מהירים"
+
+#: ../inc/front-page-blocks.php:70
+msgid "columns"
+msgstr "מדורים"
+
+#: ../inc/template-tags.php:34 ../inc/template-tags.php:78
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:80
+#, php-format
+msgid "Tagged %1$s"
+msgstr "תגיות:  %1$s"
+
+#: ../inc/template-tags.php:86
+msgid "Leave a comment"
+msgstr ""
+
+#: ../inc/template-tags.php:86
+msgid "1 Comment"
+msgstr "תגובה אחת"
+
+#: ../inc/template-tags.php:86
+msgid "% Comments"
+msgstr "% תגובות"
+
+#: ../inc/template-tags.php:90 ../template-parts/content-page.php:28
+msgid "Edit"
+msgstr ""
+
+#: ../inc/template-tags.php:231
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:231
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: ../inc/template-tags.php:234
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:234
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: ../inc/template-tags.php:237
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:237
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: ../inc/template-tags.php:241
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: ../inc/template-tags.php:244
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: ../inc/template-tags.php:247
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: ../inc/template-tags.php:250
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: ../inc/template-tags.php:253
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: ../inc/template-tags.php:256
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: ../inc/template-tags.php:259
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: ../inc/template-tags.php:262
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: ../inc/template-tags.php:265
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: ../inc/template-tags.php:269
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:274
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:277
+msgid "Archives"
+msgstr ""
+
+#: ../search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "תוצאות חיפוש: %s"
+
+#: ../sidebar.php:19
+msgid "Our authors"
+msgstr "המחברים שלנו"
+
+#: ../template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr "מצטערים, לא נמצאה תוצאה מתאימה"
+
+#: ../template-parts/content-none.php:17
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-none.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"אולי תנסו לחפש משהו אחר?\n"
+"(כדאי לכם לחפש אחר ״פיזיקה״, יש שם דבר ממש מגניבים)"
+
+#: ../template-parts/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../template-parts/content-page.php:21
+#: ../template-parts/content-single.php:41 ../template-parts/content.php:52
+msgid "Pages:"
+msgstr ""
+
+#: ../template-parts/content-single.php:54
+msgid "About the Authors "
+msgstr "על הכותבים"
+
+#: ../template-parts/content.php:44
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#~ msgctxt "post author"
+#~ msgid "by %s"
+#~ msgstr "מאת %s"
+
+#~ msgctxt "מאמרים נוספים"
+#~ msgid "more articles"
+#~ msgstr "מאמרים"
