@@ -1,6 +1,36 @@
 <?php
 
 	/**
+	 * Class as enum, for determiing what part of the homepage is being displayed
+	 */
+	abstract class Scientific2016ContentType {
+
+		const Newest = 'newest';
+		const Articles = 'articles';
+		const Fast_science = 'fast_science';
+		const Opinions = 'columns_and_opinions';
+		const Single_article_top = 'single_top';
+		const Single_article_bottom = 'single_bottom';
+		const Our_Authors = 'our_authors';
+
+	}
+
+	function scientific_2016_get_author_info_type( $section_type ){
+		$scientific_2016_content_type_acf = array(
+			Scientific2016ContentType::Newest => 'name',
+			Scientific2016ContentType::Articles => 'name',
+			Scientific2016ContentType::Fast_science => '',
+			Scientific2016ContentType::Opinions => 'image , name',
+			Scientific2016ContentType::Single_article_top => 'name',
+			Scientific2016ContentType::Single_article_bottom => 'image , name, description',
+			Scientific2016ContentType::Our_Authors => 'image , name, description'
+		);
+		$author_fields = $scientific_2016_content_type_acf[$section_type];
+
+		return $author_fields;
+	}
+
+	/**
 	 * Custom template tags for this theme.
 	 *
 	 * Eventually, some of the functionality here could be replaced by core features.
@@ -138,7 +168,7 @@
 	add_action( 'save_post', 'scientific_2016_category_transient_flusher' );
 
 	function scientific_2016_modify_query( $query ){
-		/* In homepage, get sticky post, or - if no sticky post exists - get the 7 newest posts */
+		/* In homepage, get sticky post, or - if no sticky post exists - get the newest post */
 		if ( $query->is_home() && $query->is_main_query() ) {
 			global $scientific_2016_sticky_exists;
 			$scientific_2016_sticky_exists = count( get_option( 'sticky_posts' ) ) > 0 ? true : false;
@@ -167,7 +197,7 @@
 					set_query_var( 'issue_sub_categories', $issue_sub_categories );
 					// get the ID of the articles category
 					$article_sub_cat_arr = array_values( array_filter( $issue_sub_categories, function ($obj ) {
-							if ( strpos( $obj->slug, FIRST_CATEGORY_TO_SHOW_IN_ISSUE ) > -1 ) {
+							if ( strpos( $obj->slug, ARTICLES_CAT_NAME ) > -1 ) {
 								return true;
 							}
 						} ) );
@@ -179,6 +209,11 @@
 			}
 		}
 	}
+
+	/**
+	 * This hook is called after the query variable object is created, but before the actual query is run
+	 */
+	add_filter( 'pre_get_posts', 'scientific_2016_modify_query' );
 
 	function scientific_2016_category_top_parent_id( $catid ){
 		$catParent = 0;
@@ -199,8 +234,7 @@
 	 *
 	 * @param string $before Optional. Content to prepend to the title. Default empty.
 	 * @param string $after  Optional. Content to append to the title. Default empty.
-	 */ function scientific_2016_the_archive_title(
-	$before = '', $after = '' ){
+	 */ function scientific_2016_the_archive_title( $before = '', $after = '' ){
 		$title = scientific_2016_get_the_archive_title();
 
 		if ( ! empty( $title ) ) {
@@ -302,18 +336,100 @@
 	}
 
 	/**
-	 * This hook is called after the query variable object is created, but before the actual query is run
-	 */
-	add_filter( 'pre_get_posts', 'scientific_2016_modify_query' );
-
-	/**
 	 * Add the "author" query var, for use on author page
 	 * @param array $vars
 	 * @return array $vars including new var
 	 */
 	function scientific_2016_add_query_vars_filter( $vars ){
-		$vars[] = "author_name";
+		//$vars[] = "author_name";
+		$vars[] = "group_id";
+		$vars[] = "post_id";
 		return $vars;
 	}
 
 	add_filter( 'query_vars', 'scientific_2016_add_query_vars_filter' );
+
+	/**
+	 * Return content_type according to category slug
+	 * @param int $cat_slug
+	 */
+	function scientific_2016_set_content_type_by_cat_slug( $cat_slug ){
+		$ret = '';
+		if ( strpos( urldecode( $cat_slug ), ARTICLES_CAT_NAME ) > -1 ) {
+			$ret = Scientific2016ContentType::Articles;
+		}
+		elseif ( strpos( urldecode( $cat_slug ), OPINIONS_CAT_NAME ) > -1 ) {
+			$ret = Scientific2016ContentType::Opinions;
+		}
+		elseif ( strpos( urldecode( $cat_slug ), FAST_SCIENCE_CAT_NAME ) > -1 ) {
+			$ret = Scientific2016ContentType::Fast_science;
+		}
+		return $ret;
+	}
+
+	/**
+	 * Show posts in issue, by category
+	 * @param object $query_obj - Wp_Query object with posts
+	 * @param type $sub_cat_obj - the current sub category (articlse, fast science or opinions)
+	 * @param object $content_type - category content type
+	 */
+	function scientific_2016_issue_posts( $query_obj, $sub_cat_obj, $content_type ){
+		if ( $query_obj->have_posts() ) {
+			?>
+			<h2 class="title-<?php echo $content_type ?>"><?php echo $sub_cat_obj->name ?></h2>
+			<div class="article-wrapper">
+				<?php
+				while ( $query_obj->have_posts() ) : $query_obj->the_post();
+					get_template_part( 'template-parts/content', get_post_format() );
+				endwhile;
+				?>
+			</div>
+			<?php
+		}
+	}
+
+	function scientific_2016_related_posts_section(){
+		if ( function_exists( 'wp_related_posts' ) ) {
+			?>
+			<section class="more-articles">
+				<?php
+				$cat = get_the_category();
+				if ( count( $cat ) > 0 ) {
+					$content_type = scientific_2016_set_content_type_by_cat_slug( $cat[0]->slug );
+					?>
+
+					<header class="title-<?php echo $content_type ?>"><?php echo scientific_2016_related_posts_title( $content_type ) ?></header>
+
+					<?php
+				}
+				wp_related_posts();
+				?>
+
+			</section>
+			<?php
+		}
+	}
+
+	/**
+	 * Set title of related posts, by category
+	 * @return title
+	 */
+	function scientific_2016_related_posts_title( $content_type ){
+		$ret = '';
+
+		switch ( $content_type ) {
+			case Scientific2016ContentType::Articles:
+				$ret .= __( 'articles', 'scientific-2016' ) . ' ' . _x( 'more', 'after noun', 'scientific-2016' );
+				break;
+			case Scientific2016ContentType::Fast_science:
+				$ret .= _x( 'more', 'before noun', 'scientific-2016' ) . ' ' . __( 'fast science', 'scientific-2016' );
+				break;
+			case Scientific2016ContentType::Opinions:
+				$ret .= _x( 'more', 'before noun', 'scientific-2016' ) . ' ' . __( 'opinions and columns', 'scientific-2016' );
+				break;
+			default:
+				$ret .= __( 'articles', 'scientific-2016' ) . ' ' . _x( 'more', 'after noun', 'scientific-2016' );
+				break;
+		}
+		return $ret;
+	}

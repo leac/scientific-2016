@@ -19,10 +19,11 @@
 	</header>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-	<?php
-		if ( isset( $content_type ) && $content_type != Scientific2016ContentType::Fast_science ) {
-			do_action( 'mop_acf_post_authors', scientific_2016_get_author_info_type( $content_type ) );
-		}
+	<?php if ( isset( $content_type ) && $content_type != Scientific2016ContentType::Fast_science ) { ?>
+			<section class="post-authors-wrapper">
+				<?php do_action( 'mop_acf_post_authors', scientific_2016_get_author_info_type( $content_type ) ); ?>
+			</section>
+		<?php }
 	?>
 
 	<div class="entry-content">
@@ -56,6 +57,6 @@
 	</div><!-- .entry-content -->
 
 	<!--	<footer class="entry-footer">-->
-	<?php //scientific_2016_entry_footer();      ?>
+	<?php //scientific_2016_entry_footer();       ?>
 	<!--	</footer> .entry-footer -->
 </article><!-- #post-## -->

@@ -10,10 +10,9 @@
 ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-				<?php set_query_var( 'section_type', Scientific2016ContentType::Single_article ); ?>
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
 				<?php //the_post_navigation(); ?>
@@ -34,14 +33,12 @@
 				?>
 
 				<?php
-				if ( function_exists( 'wp_related_posts' ) ) {
-					wp_related_posts();
-				}
+				scientific_2016_related_posts_section();
 				?>
 
 			<?php endwhile; // End of the loop.  ?>
 
-	</main><!-- #main -->
+    </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php get_sidebar(); ?>

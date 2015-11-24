@@ -35,7 +35,7 @@
 	
     document.addEventListener('DOMContentLoaded', function () {
 			objectFit.polyfill({
-				selector: '.block-newest-posts .entry-header img1',
+				selector: '.block-newest-posts .entry-header img, .single .entry-header img',
 				fittype: 'cover'
 			});
 		});    

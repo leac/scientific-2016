@@ -2,7 +2,9 @@ jQuery( document ).ready( function ( $ ) {
 	$( '.popover_parent > a' ).on( 'click', function () {
 		$( '.popover_parent > a' ).not( this ).parent().removeClass( 'active' );
 		$( this ).parent().toggleClass( 'active' );
-		$( '.search-field' ).focus();
+		/*for some reason, putting focus on the search input, needs setTimeot,
+		 * as described here: http://stackoverflow.com/questions/15859113/focus-not-working/15859155#15859155 */
+		setTimeout(function() { $('.search-field').focus() }, 500);
 	} );
 
 //Hide the menu when click off

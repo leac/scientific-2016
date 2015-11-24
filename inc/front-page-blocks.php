@@ -50,7 +50,7 @@
 					?>
 				</div>
 
-				<footer><a href="<?php echo get_tag_link( $tag->term_id ) ?>"><?php echo scientific_2016_get_tag_more_text( $tag->slug ) . ' ' . __( 'more', 'scientific-2016' );
+				<footer><a href="<?php echo get_tag_link( $tag->term_id ) ?>"><?php echo scientific_2016_get_tag_more_text( $tag->slug ) . ' ' . _x( 'more', 'after noun', 'scientific-2016' );
 					?> </a></footer>
 			</section>
 			<?php
@@ -58,16 +58,16 @@
 	}
 
 	function scientific_2016_get_tag_more_text( $slug ){
-		$ret='';
+		$ret = '';
 		switch ( $slug ) {
 			case 'articles':
-				$ret= __('articles', 'scientific-2016');
+				$ret = __( 'articles', 'scientific-2016' );
 				break;
 			case 'fast_science':
-				$ret= __('fast ones', 'scientific-2016');
+				$ret = __( 'fast ones', 'scientific-2016' );
 				break;
 			case 'columns_and_opinions':
-				$ret= __('columns', 'scientific-2016');
+				$ret = __( 'columns', 'scientific-2016' );
 				break;
 		}
 		return $ret;
@@ -81,17 +81,26 @@
 		<?php
 		foreach ( $years as $year ) {
 			if ( $echo_year ) {
+				/* write the year number, and wrap all issues of that year */
 				?>
 				<h2><?php echo $year->cat_name ?></h2>
+				<section class="issues-wrapper">
+				<?php } ?>
+
 				<?php
-			}
-			$issues = get_categories( 'orderby=slug&order=DESC&parent=' . $year->cat_ID );
-			foreach ( $issues as $issue ) {
-				// need to break out of 2 loops. Use a variable
-				if ( $current_issue_index <= $max_num_of_issues || $max_num_of_issues == -1 ) {
-					$current_issue_index ++;
-					scientific_2016_display_issue_cat( $issue );
+				$issues = get_categories( 'orderby=slug&order=DESC&parent=' . $year->cat_ID );
+				foreach ( $issues as $issue ) {
+					// need to break out of 2 loops. Use a variable
+					if ( $current_issue_index <= $max_num_of_issues || $max_num_of_issues == -1 ) {
+						$current_issue_index ++;
+						scientific_2016_display_issue_cat( $issue );
+					}
 				}
+				if ( $echo_year ) {
+					/* close the section of the year's issues*/
+					?>
+				</section>
+			<?php
 			}
 		}
 		?>
@@ -113,19 +122,8 @@
 					}
 				}
 				?>
-				<?php echo $issue->name ?>
+		<?php echo $issue->name ?>
 			</a>
 		</header>
 		<?php
-	}
-
-	function scientific_2016_issue_posts( $query_obj, $sub_cat_obj ){
-		if ( $query_obj->have_posts() ) {
-			?>
-			<h2><?php echo $sub_cat_obj->name ?></h2>
-			<?php
-			while ( $query_obj->have_posts() ) : $query_obj->the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile;
-		}
 	}
