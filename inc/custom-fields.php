@@ -1,41 +1,13 @@
 <?php
 
 	/**
-	 * Class as enum, for determiing what part of the homepage is being displayed
-	 */
-	abstract class Scientific2016ContentType {
-
-		const Newest = 0;
-		const Articles = 1;
-		const Fast_science = 2;
-		const Opinions = 3;
-		const Single_article = 4;
-		const Our_Authors = 5;
-
-	}
-
-	function scientific_2016_get_author_info_type( $section_type ){
-		$scientific_2016_content_type_acf = array(
-			Scientific2016ContentType::Newest => 'name',
-			Scientific2016ContentType::Articles => 'name',
-			Scientific2016ContentType::Fast_science => '',
-			Scientific2016ContentType::Opinions => 'image , name',
-			Scientific2016ContentType::Single_article => 'image , name, description',
-			Scientific2016ContentType::Our_Authors => 'image , name, description'
-		);
-		$author_fields = $scientific_2016_content_type_acf[$section_type];
-
-		return $author_fields;
-	}
-
-	/**
 	 * Get the featured image in the correct size.
 	 * @param type $section_type
 	 */
 	function scientific_2016_show_post_attached_image( $section_type ){
 		switch ( $section_type ) {
 			case Scientific2016ContentType::Newest:
-			case Scientific2016ContentType::Single_article:
+			case Scientific2016ContentType::Single_article_top:
 				$field_name = "featuredimage";
 				$field = get_field_object( $field_name );
 				if ( ! empty( $field ) && isset( $field['value']['sizes']['scientific-2016-full_width'] ) ) {
@@ -95,9 +67,9 @@
 	/**
 	 * Print the meta field 'summary'
 	 */
-	function scientific_2016_show_meta_field_value_only( $field_name ){
+	function scientific_2016_get_meta_field_value_only( $field_name ){
 		$the_field = get_field( $field_name );
-		echo $the_field;
+		return $the_field;
 	}
 
 	/**

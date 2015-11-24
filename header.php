@@ -20,7 +20,16 @@
 		<?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php
+		$additional_classes = '';
+		// give class of category slug in one-issue:
+		if ( is_category() ) {
+			if ( cat_is_ancestor_of( ALL_ISSUES_CATEGORY_ID, get_query_var( 'cat' ) ) ) {
+				$additional_classes = 'one-issue';
+			}
+		}
+		body_class( $additional_classes );
+	?>>
 		<div id="page" class="hfeed site">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'scientific-2016' ); ?></a>
 
@@ -30,12 +39,12 @@
 							<h1 class="site-title scientific-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
 							<p class="site-title scientific-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
+<?php endif; ?>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'scientific-2016' ); ?></button>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
 				</div><!-- .site-branding -->
 
@@ -43,7 +52,7 @@
 					<a class="ort-logo" href="http://www.ort.org.il"><?php _e( 'Ort site', 'scientific-2016' ) ?></a>
 					<div class="popover_parent">
 						<a href="javascript:void(0)" class="search-btn"><?php _e( '?', 'scientific-2016' ) ?></a>
-						<?php get_search_form(); ?>
+<?php get_search_form(); ?>
 					</div>
 
 					<?php
@@ -52,7 +61,7 @@
 //							echo do_shortcode( '[ssba]' );
 //						}
 					?>
-<!--					<a href="<?php //comments_link(); ?>">
+<!--					<a href="<?php //comments_link();  ?>">
 						Comments to this post
 					</a>-->
 				</div>

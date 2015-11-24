@@ -88,7 +88,9 @@
 			define( 'FAST_SCIENCE_TAG_SLUG', 'fast_science' );
 			define( 'COLUMNS_OPINIONS_TAG_SLUG', 'columns_and_opinions' );
 			define( 'ALL_ISSUES_CATEGORY_ID', 13 );
-			define( 'FIRST_CATEGORY_TO_SHOW_IN_ISSUE', __( 'articles', 'scientific-2016' ) );
+			define( 'ARTICLES_CAT_NAME', __( 'articles', 'scientific-2016' ) );
+			define( 'OPINIONS_CAT_NAME', __( 'opinions', 'scientific-2016' ) );
+			define( 'FAST_SCIENCE_CAT_NAME', __( 'fast_science', 'scientific-2016' ) );
 		}
 
 	endif; // scientific_2016_setup
@@ -151,7 +153,7 @@
 
 		wp_enqueue_script( 'scientific-2016-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-		wp_enqueue_script( 'scientific-2016-script', get_template_directory_uri() . '/js/scientific-2016.js', array( 'jquery' ), '2015110306', true );
+		wp_enqueue_script( 'scientific-2016-script', get_template_directory_uri() . '/js/scientific-2016.js', array( 'jquery' ), '0.5', true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

@@ -482,6 +482,7 @@ table {
     width: 100%;
 }
 
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -604,7 +605,6 @@ a:active {
 
 .main-navigation a {
     display: block;
-    text-decoration: none;
 }
 
 .main-navigation ul ul {
@@ -980,7 +980,8 @@ object {
 .title-fast_science:after,
 .title-columns_and_opinions:after,
 .separator-element:before,
-.widget_nav_menu .menu-item:last-child a::after{
+.widget_nav_menu .menu-item:last-child a::after,
+.more-articles-title:after{
     background-image: url('images/icon4main.png');
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -1147,7 +1148,6 @@ body .responsive-menu{
     background-color: #dfdfdf;
 }
 .widget_nav_menu .menu a{
-    text-decoration: none;
     color: inherit;
     display: block;
     width: 100%;
@@ -1260,7 +1260,6 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 }
 .site-info a{
     color: inherit;
-    text-decoration: none;
 }
 .site-info .separate{
     border-left: 1px solid;
@@ -1273,7 +1272,8 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .title-fast_science,
 .title-columns_and_opinions,
 .page-title,
-.page h1.entry-title{
+.page h1.entry-title,
+.more-articles-title{
     color: #000;
     font-size: 3.3rem;
     font-weight: 800;
@@ -1289,7 +1289,6 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .title-articles a,
 .title-fast_science a,
 .title-columns_and_opinions a{
-    text-decoration: none;
     display: block;
     width: 100%;
 }
@@ -1298,7 +1297,8 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .title-fast_science:before,
 .title-columns_and_opinions:before,
 .page-title:before,
-.page h1.entry-title:before{
+.page h1.entry-title:before,
+.more-articles-title:before{
     content: "";
     position: absolute;
     background-color: #000;
@@ -1313,7 +1313,8 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 /*title icon*/
 .title-articles:after,
 .title-fast_science:after,
-.title-columns_and_opinions:after{
+.title-columns_and_opinions:after,
+.more-articles-title:after{
     content: "";
     position: absolute;
     top: -0.3rem;
@@ -1388,17 +1389,10 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     margin: 1rem 0 0.4rem;
 }
 .entry-title a{
-    text-decoration: none;
     color: #000;
-}
-/*author name*/
-body:not(.single).entry-meta {
-    font-size: 1.6rem;
-    margin: 0.7rem 0;
 }
 .entry-meta a{
     color: inherit;
-    text-decoration: none;
 }
 .entry-meta img{
     border: 1px solid #e5e5e5;
@@ -1411,7 +1405,6 @@ body:not(.single).entry-meta {
 .form-submit input{
     background-color: #dfdfdf;
     padding: 1rem 1.5rem;
-    text-decoration: none;
     color: #000;
     display: inline-block;
     position: relative;
@@ -1425,7 +1418,7 @@ body:not(.single).entry-meta {
     bottom: 0.2rem;
 }
 
-/* --------->>> Block Newest Pposts <<<--------*/
+/* --------->>> Block Newest Posts <<<--------*/
 .block-newest-posts{
     margin: 0 auto;
     padding: 0;
@@ -1435,89 +1428,41 @@ body:not(.single).entry-meta {
 }
 .block-newest-posts .entry-title,
 .block-newest-posts .entry-meta,
-.block-newest-posts .post-authors-wrapper{
+.block-newest-posts .post-authors-wrapper,
+.single .post-authors-wrapper{
     background-color: #000;
     color: #fff;
     text-align: center;
     padding: 1rem;
     margin: 0;
 }
-.block-newest-posts .entry-title a,
-.block-newest-posts .author a{
-    text-decoration: none;
+.block-newest-posts .entry-title a, 
+.block-newest-posts .author .author-name,
+.single .post-authors-wrapper .author .author-name{
     color: inherit;
-}
-.block-newest-posts .post-authors-wrapper{
-    padding-top: 0;
-}
-.block-newest-posts .post-authors-wrapper .author{
-    display: inline-block;
 }
 .block-newest-posts .entry-summary{
     background-color: #e4e4e4;
     padding: 1.4rem;
     line-height: 1.6;
 }
-/*.block-newest-posts .entry-header img,
-.single .entry-header img{
-    border: none;
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    max-width: 60rem;
-    max-height: 24rem;
-    object-fit: cover;
-    overflow: hidden; // Cuts off the parts of the image poking out
-    from here: http://stackoverflow.com/questions/11670874/is-there-an-equivalent-to-background-size-cover-and-contain-for-image-elements
-    needs polifill: https://github.com/anselmh/object-fit/blob/master/README.md
-}*/
 .block-newest-posts .entry-header img,
 .single .entry-header img{
     border: none;
     display: block;
-    width: 100vw;
-    /*    height: 100vh;*/
-    max-width: 60rem;
-    max-height: 24rem;
-    /*object-fit: cover;*/
-    overflow: hidden; // Cuts off the parts of the image poking out
-    /*from here: http://stackoverflow.com/questions/11670874/is-there-an-equivalent-to-background-size-cover-and-contain-for-image-elements*/
-    /*needs polifill: https://github.com/anselmh/object-fit/blob/master/README.md*/
-}
-
-
-
-/* -----------------------------------*/
-/* --------->>> Tag list <<<--------*/
-/* -----------------------------------*/
-body.archive .site-content,
-body.search-results .site-content,
-.page .site-content{
-    padding: 0 2rem;
-}
-.page-header,
-.page .entry-header{
-    text-align: center;
-}
-.nav-previous a,
-.nav-next a{
-    display: block;
     width: 100%;
+    height: auto;
 }
-.nav-next{
-    margin-right: 0.2rem;
-}
-.nav-next a:after{
-    left: -4%;
-}
-.nav-previous a{
-    padding: 1rem 2rem 1rem 1rem;
-}
-.nav-previous a:after{
-    content: "«";
-    left: 103%;
+.block-newest-posts .post-authors-wrapper,
+.single .post-authors-wrapper{
+    padding-top: 0;
 }
 
+
+
+.block-articles .post-authors-wrapper{
+    margin: 1rem 0;
+}
 /* -----------------------------------*/
 /* --------->>> Single Post <<<--------*/
 /* -----------------------------------*/
@@ -1536,9 +1481,12 @@ body.search-results .site-content,
 .entry-footer .tags-links{
     padding: 1rem 2rem;
 }
+.block-newest-posts .entry-title,
+.single .entry-title{
+    padding-bottom: 0.5rem;
+}
 
-
-/*posr design*/
+/*post design*/
 .single .entry-header{
     background-color: #dfdfdf;
 }
@@ -1590,6 +1538,9 @@ body.search-results .site-content,
 .single .entry-summary p{
     margin-bottom: 0;
 }
+.single .entry-summary p{
+    margin-bottom: 0;
+}
 .single .entry-header img ~ .entry-top-wrapper .entry-summary{
     background-color: rgba(255,255,255,0.85);
     box-shadow: none;
@@ -1620,7 +1571,7 @@ body.search-results .site-content,
 }
 .single .entry-content a{
     color: #e00572;
-    text-decoration: none;
+    text-decoration: underline;
 }
 .single .entry-content blockquote{
     font-size: 2.4rem;
@@ -1685,6 +1636,10 @@ body.search-results .site-content,
     text-align: center;
     color: #fff;
 }
+.goodtoknow a{
+    text-decoration: underline;
+    color: inherit;
+}
 
 /*more to read about*/
 .single .reading {
@@ -1693,23 +1648,40 @@ body.search-results .site-content,
     margin-bottom: 5rem;
 }
 .reading ul{
-    direction: ltr;
+    /*direction: ltr;*/
     margin: 0;
     padding: 0;
     list-style: none;
 }
 .reading ul li{
-    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     text-indent: -0.6rem;
 }
-.reading ul li:before {
-    content: "■";
-    color: #0e7e74;
-    display: inline-block;
-    left: -1.4rem;
-    position: relative;
+.reading ul li[style*="text-align: left"],
+.reading ul li[style*="text-align:left"]{
+    padding-left: 1.6rem;
+    padding-right: 0;
+    direction: ltr;
 }
-/*posr footer tags*/
+.reading ul li::before,
+.reading ul li[style*="text-align: right"]:before,
+.reading ul li[style*="text-align:right"]:before{
+    content: " ■ ";
+    display: inline-block;
+    position: relative;
+    right: -1.4rem;
+    color: #0e7e74;
+}
+.reading ul li[style*="text-align: left"]:before,
+.reading ul li[style*="text-align:left"]:before{
+    left: -1.4rem;
+    right: auto;
+}
+.single .reading a{
+    text-decoration: underline;
+    color: inherit;
+}
+/*post footer tags*/
 .entry-footer .tags-links,
 .entry-footer .edit-link{
     display: block;
@@ -1727,29 +1699,21 @@ body.search-results .site-content,
 .entry-footer .edit-link a{
     color: #fff;
     background-color: #217772;
-    text-decoration: none;
     padding: 1rem;
     display: inline-block;
 }
 /*about our authors*/
-.single .author,
-.our-authors-plugin .author{
-    margin-bottom: 2rem;
+.block-title-plain{
+    background-color: #217872;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    margin: 0 0 3rem 0;
 }
-.single .author img,
-.our-authors-plugin .author img{
-    width: 100%;
-    max-width: 10rem;
-    float: right;
-    margin: 0.5rem 0 1rem 2rem;
-    border: 1px solid #e5e5e5;
-}
-.single .author a,
-.our-authors-plugin .author a{
+.block-title-plain a{
     color: inherit;
-    text-decoration: none;
-    font-weight: 600;
-    display: block;
 }
 /*comments*/
 .comments-title,
@@ -1780,7 +1744,6 @@ body.search-results .site-content,
 }
 .comment-metadata > a{
     font-size: 1.4rem;
-    text-decoration: none;
 }
 .reply {
     text-align: left;
@@ -1807,10 +1770,79 @@ body.search-results .site-content,
     text-shadow: none;
 }
 
+/* --------->>> Related Posts <<<--------*/
+.more-articles{
+    text-align: center;
+}
+.more-articles .title-articles{
+    background-color: #fff;
+}
+.more-articles .title-articles::after{
+    background-color: transparent;
+    z-index: 0;
+}
+.related_post {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.related_post  li{
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.wp_rp_thumbnail img{
+    width: 100%;
+    border: 1px solid #e5e5e5;
+}
+.wp_rp_title,
+.wp_rp_excerpt{
+    display: block;
+    text-align: right;
+    color: #000;
+}
+.wp_rp_title{
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 1rem 0 0.4rem;
+}
+.wp_rp_excerpt{
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
 
-/* --------------------------------*/
-/* ---------->>> Archive<<<--------*/
-/* --------------------------------*/
+/* --------------------------------------------*/
+/* --------->>> Tag list - Archive< <<<--------*/
+/* --------------------------------------------*/
+body.archive:not(.one-issue) .site-content,
+body.search-results .site-content,
+.page .site-content{
+    padding: 0 2rem;
+}
+.page-header,
+.page .entry-header{
+    text-align: center;
+}
+/*next-previous posts*/
+.nav-previous a,
+.nav-next a{
+    display: block;
+    width: 100%;
+}
+.nav-next{
+    margin-right: 0.2rem;
+}
+.nav-next a:after{
+    left: -4%;
+}
+.nav-previous a{
+    padding: 1rem 2rem 1rem 1rem;
+}
+.nav-previous a:after{
+    content: "«";
+    left: 103%;
+} 
+
 .archive .site-content,
 .search .site-content{
     margin-top: 3rem;
@@ -1839,32 +1871,61 @@ body.search-results .site-content,
 .search .tags-links a,
 .page .tags-links a{
     color: inherit;
-    text-decoration: none;
 }
 .archive .entry-content,
 .search .entry-content{
     margin: 0;
     margin-top: 0.5rem;
 }
-.archive .post,
+
+.archive:not(.one-issue) .post,
 .search .post{
     margin-bottom: 8rem;
 }
-.archive .author{
+
+/* --------------------------------*/
+/* ------->>> Authors plugin<<<----*/
+/* --------------------------------*/
+.post-authors-wrapper .author{
     display: inline-block;
+    font-size: 1.6rem;
 }
-body.tag-columns_and_opinions .author,
-body.category .author{
-    display: block;
+.post-authors-wrapper .author .author-name{
+    color: inherit;
+}
+.post-authors-wrapper .author .author-img{
+    border: 1px solid #dfdfdf;
+    width: 100%;
+    max-width: 9rem;
+}
+/*in columns_and_opinions posts list & in one issue & in home in block-columns_and_opinions the author pic and name need to be on the side*/
+body.tag-columns_and_opinions .post-authors-wrapper,
+.block-columns_and_opinions .post-authors-wrapper{
     float: right;
     max-width: 9rem;
+    margin: 0.8rem 0 0 1rem;    
+}
+/*about the authors - in the end of the post and in home page near top 5*/
+.our-authors-plugin .author{
+    text-align: right;
+    margin-bottom: 3rem;
+}
+.our-authors-plugin .author .author-img,
+.page-authors-wrapper .author .author-img{
+    float: right;
+    border: 1px solid #dfdfdf;
     width: 100%;
-    margin: 0.3rem 0 0 1rem;
+    max-width: 10rem;
+    margin: 0.6rem 0 0 2rem;
+}
+.our-authors-plugin .author .author-name,
+.page-authors-wrapper .author .author-name{
+    font-weight: 600;
+    color: inherit;
+    display: block;
 }
 
-.author img{
-    border: 1px solid #dfdfdf;
-}
+
 
 /* --------------------------------*/
 /* ------->>> Search Results<<<----*/
@@ -1912,11 +1973,11 @@ input.search-field[type="search"] {
     outline: none;
 }
 /*over ridding the lable opacity*/
-::-webkit-input-placeholder{
+.search-field::-webkit-input-placeholder{
     color: #fff;
     opacity: 1 !important;
 }
-::-moz-placeholder { /* WebKit browsers */
+.search-field::-moz-placeholder { /* WebKit browsers */
     color: #fff;
     opacity: 1 !important;
 }
@@ -1930,12 +1991,76 @@ input:-webkit-autofill:focus{
 .search-submit{
     display: none;
 }
+
 /* --------------------------------*/
 /* ------->>>  ISSSUES  <<<--------*/
 /* --------------------------------*/
+.category-all-issues .site-main{
+    text-align: center;
+}
 .category-all-issues  h2{
     text-align: center;
-    color: #217772;
+    background-color: #217772;
+    color: #fff;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.2rem 2rem;
+}
+.category-all-issues .issues-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*same code with prefix - for iphone*/
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+
+}
+.category-all-issues .entry-header{
+    width: 49%;
+    margin-left: 1%;
+}
+.one-issue .site-main{
+    text-align: center;
+}
+/* --------------------------------*/
+/* ---------->>> 404 Page<<<-------*/
+/* --------------------------------*/
+.error404 .site-content {
+    background-image: url("images/404_small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 0 2rem 30rem;
+}
+
+.error-404-title {
+    color: rgba(211, 233, 255, 0.4);
+    font-size: 14rem;
+    line-height: 1.2;
+    margin: 0;
+    mix-blend-mode: color-dodge;
+}
+.error-404 .page-content{
+    color: #fff;
+
+}
+.error-404 .page-content p:first-of-type span{
+    display: block;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.error-404 .page-content a{
+    color: #ffde00;
+}
+
+/* --------------------------------*/
+/* ----->>>  Author Page  <<<------*/
+/* --------------------------------*/
+.page-authors-wrapper {
+    background-color: #dfdfdf;
+    margin-bottom: 7rem;
+    padding: 3rem 4rem;
 }
 /* --------------------------------*/
 /* ---------->>> 404 Page<<<-------*/
@@ -1985,7 +2110,16 @@ input:-webkit-autofill:focus{
     /* -----------------------------------*/
     /* --------->>> Front Page <<<--------*/
     /* -----------------------------------*/
-
+    /* --------->>> Block Newest Posts  <<<--------*/
+    .block-newest-posts .entry-header img,
+    .single .entry-header img{
+	width: 100vw;
+	height: 50vh;
+	object-fit: cover;
+	overflow: hidden; // *Cuts off the parts of the image poking out*/
+	/* from here: http://stackoverflow.com/questions/11670874/is-there-an-equivalent-to-background-size-cover-and-contain-for-image-elements
+	 needs polifill: https://github.com/anselmh/object-fit/blob/master/README.md*/
+    }
     /* --------->>> Block Fast Science <<<--------*/
     .block-fast_science{
 	padding: 2rem 7%;
@@ -2009,8 +2143,8 @@ input:-webkit-autofill:focus{
 	width: 53%;
 	margin-bottom: 0.5rem;
     }
-    .post-authors-wrapper{
-	display: none;
+    .home .post-authors-wrapper{
+	/*display: none;*/
     }
     /* --------->>> Block Columns And Opinions <<<--------*/
     /*block title icon*/
@@ -2042,6 +2176,12 @@ input:-webkit-autofill:focus{
 	margin-top: 0.6rem;
     }
 
+    /*single - more articles*/
+    .more-articles-title {
+	line-height: 1;
+	max-width: 19rem;
+    }
+
 
 }
 
@@ -2052,8 +2192,15 @@ input:-webkit-autofill:focus{
 @media only screen and (min-width: 200px) and (max-width: 1199px){
     /*author name and image*/
     .block-fast_science .post:last-child,
-    .home .block-columns_and_opinions .author img {
+    .block-columns_and_opinions .author .author-img{
 	display: none;
+    }
+    .block-columns_and_opinions .post-authors-wrapper{
+	float: none;
+	width: auto;
+	display: inline-block;
+	margin-bottom: 1rem;
+	clear: right;
     }
 }
 
@@ -2064,7 +2211,6 @@ input:-webkit-autofill:focus{
 @media only screen and (min-width: 200px) and (max-width: 959px){
     .block-newest-posts .tags-links,
     .block-latest-issues,
-    .authors,
     .home .widget-area,
     .widget_quotescollection,
     .site-header .search-form,
@@ -2096,9 +2242,7 @@ input:-webkit-autofill:focus{
 	padding: 1rem calc(50% - 25rem);
     }
     .block-articles .entry-title,
-    .block-columns_and_opinions .entry-title,
-    .block-articles .entry-summary,
-    .block-columns_and_opinions .entry-summary{
+    .block-articles .entry-summary{
 	display: inline;
     }
     /*between 600-960px fast science is the only block that needs flex*/
@@ -2126,9 +2270,11 @@ input:-webkit-autofill:focus{
 	margin-bottom: 10px;
 	width: 100%;
     }
-    .block-columns_and_opinions .author,
-    .block-articles .author{
+    /*columns_and_opinions*/
+    .block-columns_and_opinions .entry-title,
+    .block-columns_and_opinions .entry-summary{
 	display: inline-block;
+	width: 45%;
     }
 
     /*tag list*/
@@ -2152,15 +2298,10 @@ input:-webkit-autofill:focus{
 /* ---------------------------------------------------*/
 
 
-
-
-
-
 /*------------------------------*/
 /*--------- 600px and Up -------*/
 /*------------------------------*/
-@media only screen and (min-width: 600px){
-
+@media only screen and (min-width: 600px){ 
     /* -----------------------------------*/
     /* --------->>> Site Footer <<<-------*/
     /* -----------------------------------*/
@@ -2230,12 +2371,16 @@ input:-webkit-autofill:focus{
     /* title line-through*/
     .title-articles:before,
     .title-fast_science:before,
-    .title-columns_and_opinions:before{
+    .title-columns_and_opinions:before,
+    .more-articles-title:before{
 	width: 36.4rem;
     }
     .page-title:before,
     .page h1.entry-title:before{
 	width: 35rem;
+    }
+    .one-issue .page-title:before{
+	width: 63rem;
     }
     .search-no-results .page-title:before{
 	width: 64rem;
@@ -2278,16 +2423,6 @@ input:-webkit-autofill:focus{
 	padding: 0;
     }
 
-    /* --------->>> Block Newst Post <<<--------*/
-    .block-newest-posts .entry-header img,
-    .single .entry-header img{
-	max-width: 95.9rem;
-	max-height: 32rem;
-    }
-    /* --------->>> Block Articles <<<--------*/
-    .block-articles .author {
-	margin: 0.5rem 0;
-    }
 
     /* -------->>> Block Tag  <<<-------*/
     /*green lable on image*/
@@ -2298,15 +2433,16 @@ input:-webkit-autofill:focus{
     /* -----------------------------------*/
     /* --------->>> Tag list <<<--------*/
     /* -----------------------------------*/
-    body.archive .site-content,
+    body.archive:not(.one-issue) .site-content,
     body.search-results .site-content,
     .page .site-content{
 	width: 80%;
 	margin: 0 auto;
 	padding: 0;
     }
-    .archive .site-main,
-    .search-results .site-main{
+    .archive:not(.one-issue):not(.category-all-issues) .site-main,
+    .search-results .site-main,
+    .page .article-wrapper{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -2323,11 +2459,11 @@ input:-webkit-autofill:focus{
 	flex: 0 1 100%; /*to keep them im 100% width and not in the flex-wrap flow*/
 	-webkit-flex: 0 1 100%;
     }
-    body:not(.home):not(.single) .post{
+    body:not(.home):not(.single):not(.one-issue) .post{
 	width: 49%;
 	margin-right: 0.5%;
     }
-    .archive .entry-content {
+    .archive:not(.one-issue) .entry-content {
 	padding-left: 3rem;
     }
     body.tag-fast_science .site-content .post{
@@ -2342,12 +2478,25 @@ input:-webkit-autofill:focus{
     .children{
 	margin-right: 2rem;
     }
+    /* --------->>> Related Posts <<<--------*/
+    .related_post{
+	display: flex;
+    }
+    .related_post  li{
+	width: 33%;
+	margin-left: 1%;
+    }
+    .related_post  li:last-of-type{
+	margin-left: 0;
+    }
+    .wp_rp_title, .wp_rp_excerpt {
+	padding-left: 1.5rem;
+    }
     /* --------------------------------*/
     /* ------->>>  ISSSUES  <<<--------*/
     /* --------------------------------*/
     .category-all-issues .entry-header{
 	width: 24%;
-	margin-left: 1%;
     }
 
     /* --------------------------------*/
@@ -2356,6 +2505,7 @@ input:-webkit-autofill:focus{
     .error404 .site-content {
 	padding-right: 12rem;
     }
+
 }
 
 
