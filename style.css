@@ -1452,7 +1452,6 @@ body:not(.single).entry-meta {
 }
 .block-newest-posts .post-authors-wrapper .author{
     display: inline-block;
-    margin-left: 0.5rem;
 }
 .block-newest-posts .entry-summary{
     background-color: #e4e4e4;
@@ -1587,6 +1586,9 @@ body.search-results .site-content,
     color: #fff;
     margin-top: 0;
     box-shadow: -500px 0 0 0 #217872, 500px 0  0 0 #217872;
+}
+.single .entry-summary p{
+    margin-bottom: 0;
 }
 .single .entry-header img ~ .entry-top-wrapper .entry-summary{
     background-color: rgba(255,255,255,0.85);
@@ -1742,7 +1744,8 @@ body.search-results .site-content,
     margin: 0.5rem 0 1rem 2rem;
     border: 1px solid #e5e5e5;
 }
-.single .author a{
+.single .author a,
+.our-authors-plugin .author a{
     color: inherit;
     text-decoration: none;
     font-weight: 600;
@@ -1794,7 +1797,8 @@ body.search-results .site-content,
 .form-submit{
     text-align: left;
 }
-.form-submit input {
+.form-submit input,
+.form-submit input:hover{
     border: medium none;
     border-radius: 0;
     box-shadow: none;
@@ -1840,6 +1844,7 @@ body.search-results .site-content,
 .archive .entry-content,
 .search .entry-content{
     margin: 0;
+    margin-top: 0.5rem;
 }
 .archive .post,
 .search .post{
@@ -1932,6 +1937,39 @@ input:-webkit-autofill:focus{
     text-align: center;
     color: #217772;
 }
+/* --------------------------------*/
+/* ---------->>> 404 Page<<<-------*/
+/* --------------------------------*/
+.error404 .site-content {
+    background-image: url("images/404_small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 0 2rem 30rem;
+}
+
+.error-404-title {
+    color: rgba(211, 233, 255, 0.4);
+    font-size: 14rem;
+    line-height: 1.2;
+    margin: 0;
+    mix-blend-mode: color-dodge;
+}
+.error-404 .page-content{
+    color: #fff;
+
+}
+.error-404 .page-content p:first-of-type span{
+    display: block;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.error-404 .page-content a{
+    color: #ffde00;
+    text-decoration: underline;
+
+}
+
 
 /* ----------------------------------------------*/
 /* ---------->>> Resolutions Specifics<<<--------*/
@@ -1970,6 +2008,9 @@ input:-webkit-autofill:focus{
 	line-height: 1;
 	width: 53%;
 	margin-bottom: 0.5rem;
+    }
+    .post-authors-wrapper{
+	display: none;
     }
     /* --------->>> Block Columns And Opinions <<<--------*/
     /*block title icon*/
@@ -2011,7 +2052,7 @@ input:-webkit-autofill:focus{
 @media only screen and (min-width: 200px) and (max-width: 1199px){
     /*author name and image*/
     .block-fast_science .post:last-child,
-    .home .author img {
+    .home .block-columns_and_opinions .author img {
 	display: none;
     }
 }
@@ -2243,7 +2284,10 @@ input:-webkit-autofill:focus{
 	max-width: 95.9rem;
 	max-height: 32rem;
     }
-
+    /* --------->>> Block Articles <<<--------*/
+    .block-articles .author {
+	margin: 0.5rem 0;
+    }
 
     /* -------->>> Block Tag  <<<-------*/
     /*green lable on image*/
@@ -2304,6 +2348,13 @@ input:-webkit-autofill:focus{
     .category-all-issues .entry-header{
 	width: 24%;
 	margin-left: 1%;
+    }
+
+    /* --------------------------------*/
+    /* ---------->>> 404 Page<<<-------*/
+    /* --------------------------------*/
+    .error404 .site-content {
+	padding-right: 12rem;
     }
 }
 

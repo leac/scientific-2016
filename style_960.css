@@ -16,8 +16,8 @@
 
 	/*for android 4.2 and less*/
 	/*http://stackoverflow.com/questions/20109319/flexbox-setting-for-cordova-on-samsung-galaxy-tab-android-4-1-2*/
-/*	display: -webkit-box;
-	 -webkit-box-pack: justify;*/
+	/*	display: -webkit-box;
+		 -webkit-box-pack: justify;*/
     }
     .site-header .scientific-logo{
 	width: 34rem;
@@ -282,8 +282,8 @@
 	float: left;
     }
     .block-newest-posts .entry-summary{
-	 background-color: rgba(255, 255, 255, 0.85);
-	 padding-left: 2rem;
+	background-color: rgba(255, 255, 255, 0.85);
+	padding-left: 2rem;
     }
     .block-newest-posts .post{
 	position: relative;
@@ -300,10 +300,10 @@
     }
     /* --------->>> Block  Columns and Opinions <<<--------*/
     .block-columns_and_opinions .post-authors-wrapper {
-/*	display: inline-block;
-	float: right;
-	margin: 0.8rem 0 1rem 2rem;
-	max-width: 10rem;*/
+	/*	display: inline-block;
+		float: right;
+		margin: 0.8rem 0 1rem 2rem;
+		max-width: 10rem;*/
     }
 
     /* --------->>> Block  Latest Issues <<<--------*/
@@ -474,8 +474,10 @@
     .single .entry-header,
     .single .entry-article-summary{
 	position: relative;
-
 	margin-top: -1px; /*until lea will take it out by code when there's no maamarim expert'*/
+    }
+    .single .entry-article-summary{
+	text-align: right;
     }
     /*.single .entry-header img ~ .entry-top-wrapper .entry-title,*/
     .single .entry-header img ~ .entry-top-wrapper .entry-summary{
@@ -501,7 +503,7 @@
 	width: 30%;
     }
     /*comments*/
-        .children{
+    .children{
 	margin-right: 11rem;
     }
 
@@ -518,6 +520,28 @@
 	padding-right: calc(50% - 35.5rem);
     }
 
+    /* --------------------------------*/
+    /* ---------->>> 404 Page<<<-------*/
+    /* --------------------------------*/
+    .error404 .site-content {
+	background-image: url("images/404_big.jpg");
+	background-position: right top;
+	/*	background-size: 100% auto;*/
+	padding: 6rem 0 33rem 0;
+    }
+    .error-404{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	/*same code with prefix - for ios*/
+	display: -webkit-flex;
+	-webkit-justify-content: flex-end;
+	-webkit-align-items: center;
+	margin-left: 2%;
+    }
+    .error-404-title{
+	margin-left: 5rem;
+    }
 }
 
 
@@ -591,7 +615,7 @@
     .more-issues{
 	height: 27.5rem;
     }
-        /* --------->>> Block  Columns and Opinions <<<--------*/
+    /* --------->>> Block  Columns and Opinions <<<--------*/
     .block-columns_and_opinions .post-authors-wrapper {
 	display: inline-block;
 	float: right;
@@ -635,13 +659,20 @@
     .reading{
 	padding: 1rem calc( 50% - 44rem);
     }
-        /* --------------------------------*/
+    /* --------------------------------*/
     /* ------->>>  ISSSUES  <<<--------*/
     /* --------------------------------*/
     .category-all-issues .entry-header{
 	width: 22%;
 	margin-left: 1%;
     }
+    /* --------------------------------*/
+    /* ---------->>> 404 Page<<<-------*/
+    /* --------------------------------*/
+    .error-404{
+	margin-left: 19%;
+    }
+
 
 }
 
@@ -733,6 +764,14 @@
 	width: 18%;
 	margin-left: 1%;
     }
+
+    /* --------------------------------*/
+    /* ---------->>> 404 Page<<<-------*/
+    /* --------------------------------*/
+    .error-404{
+	margin-left: 17%;
+    }
+
 
 }
 
