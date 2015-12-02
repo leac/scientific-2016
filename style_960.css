@@ -7,7 +7,7 @@
     /* -----------------------------------*/
     .site-header{
 	width: 75rem;
-	margin: 5rem auto 1rem;
+	margin: 0 auto 1rem;
 	display: flex;
 	justify-content: space-between;
 	/*same code with prefix - for ios*/
@@ -26,6 +26,7 @@
     }
     .site-branding{
 	width: 80%;
+	margin-top: 5rem;
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
@@ -33,9 +34,6 @@
 	display: -webkit-flex;
 	-webkit-align-items: flex-end;
 	-webkit-justify-content: flex-start;
-	/*for android 4.2 and less
-	display: -webkit-box;
-	 -webkit-box-pack: justify;*/
     }
     .main-navigation {
 	margin: 0 2rem 2.6rem 0;
@@ -53,13 +51,24 @@
     .left-header{
 	display: inline-block;
     }
-    /* ------->>> search <<<------*/
-    .popover_parent{
-	display: inline-block;
-	margin: 0.7rem 13rem 0 0;
-
+    .left-header{
+	text-align: center;
+	margin-top: 1.8rem;
     }
-    .search-btn {
+    /* ------->>> search & a11y<<<------*/
+    .popover-parent-search,
+    .popover-parent-a11y{
+	display: inline-block;
+	margin: 2rem 0 0 0;
+	padding-right: 1.5rem;
+    }
+    .popover-parent-search{
+	border-left: 2px solid #e8e8e8;
+	padding-left: 1.5rem;
+	padding-right: 0;
+    }
+    .search-btn,
+    .a11y-btn{
 	display: block;
 	width: 4.5rem;
 	height: 4.5rem;
@@ -68,28 +77,36 @@
 	background-position: 0 -302px;
 	border-radius: 50%;
     }
-    .active .search-btn{
-	background-position: -45px -302px;
+    .a11y-btn{
+	background-position: -91px -302px;
+    }
+    .active .search-btn,
+    .active .a11y-btn{
+	background-position: -46px -302px;
     }
     .site-header{
 	position: relative;
     }
 
-    .site-header .search-form{
+    .site-header .search-form,
+    .site-header .mp-accessibility-plugin{
 	position: absolute;
-	bottom: -20rem;
+	bottom: -20.6rem;
 	right: 0;
 	opacity: 0;
 	visibility: hidden;
 	padding: 6rem 0;
 	margin-top: 0;
-	background-color: #217772;
-	box-shadow: 500px 0 0 0 #217772, -500px 0 0 0 #217772;
+	transition: 0.5s ease;
     }
-    .site-header input.search-field[type="search"] {
-	color: #fff;
+    .site-header .mp-accessibility-plugin{
+	bottom: -24.4rem;
+	box-shadow: 400px 0 0 0 #e5e5e5, -400px 0 0 0 #e5e5e5;
+	width: 100%;
     }
-    .site-header .active .search-form{
+
+    .site-header .active .search-form,
+    .site-header .active .mp-accessibility-plugin{
 	visibility: visible;
 	opacity: 1;
     }
@@ -194,6 +211,7 @@
     /*menu - contact us and facebook*/
     .widget_nav_menu .menu {
 	justify-content: flex-end;
+	-webkit-justify-content: flex-end;
     }
     .widget_nav_menu .menu-item:last-child{
 	margin-right: 2.5rem;
@@ -241,12 +259,13 @@
 	/*same code with prefix - for iphone*/
 	display: -webkit-flex;
 	-webkit-flex-wrap: wrap;
-	-webkit-justify-content: space-between;
+	-webkit-justify-content: center;
     }
     .block.block-newest-posts{
 	width: 100%;
     }
-    .article-wrapper .post{
+    .home .article-wrapper .post,
+    .one-issue .article-wrapper .post{
 	width: 33%;
 	margin-left: 0.5%;
     }
@@ -267,17 +286,16 @@
     .one-issue .block-articles .article-wrapper .post:last-of-type{
 	margin-left: 0.5%;
     }
-    /*.entry-title,*/
-    body:not(.single) .entry-summary {
+    .block:not(.block-newest-posts) .entry-title,
+    .block:not(.block-newest-posts) .entry-summary{
 	padding-left: 3rem;
     }
-
+        
     .block-newest-posts .entry-title,
     .block-newest-posts .entry-meta,
     .block-newest-posts .entry-summary{
 	display: block;
 	margin: 0 auto;
-	/*width: 80%;*/
     }
     .block-latest-issues .entry-header img{
 	width: auto;
@@ -305,9 +323,6 @@
 	display: block;
 	width: 80%;
     }
-    /* --------->>> Block  Articles <<<--------*/
-
-
     /* --------->>> Block  Latest Issues <<<--------*/
     .block.block-latest-issues{
 	width: 100%;
@@ -401,33 +416,24 @@
     }
 
     /* -----------------------------------*/
-    /* --------->>> Tag list <<<--------*/
+    /* ---->>> Tag list - Archive <<<-----*/
     /* -----------------------------------*/
     body:not(.home):not(.single):not(.one-issue) .site-content{
 	margin-top: 6rem;
-    }
-    body.archive .site-content,
-    body.search-results .site-content,
-    .page .site-content{
 	padding: 0;
-	/*max-width: 96rem;*/
-	margin-right: auto;
-	margin-left: auto;
     }
-    body:not(.home):not(.single):not(.one-issue) .post{
-	width: 32%;
-    }
-    body.search-results .site-main .post{
-	width: 24%;
+    body.tag .post,
+    body.search-results .post,
+    .page .post{
+	width: 32.8%;
     }
     body.tag-fast_science .site-content .post{
-	width: 24%;
+	width: 24.5%;
     }
     /* -----------------------------------*/
     /* --------->>> Single Post <<<--------*/
     /* -----------------------------------*/
     /*alignment ordering*/
-    .block-newest-posts .article-wrapper,
     .single .entry-top-wrapper,
     .single .entry-content,
     .goodtoknow,
@@ -438,10 +444,16 @@
     .entry-footer .tags-links{
 	margin-right: calc( 50% - 37.5rem);
 	margin-left: calc( 50% - 37.5rem);
-
+    }
+    .block-newest-posts .article-wrapper{
+	margin-right: 10%;
+	margin-left: 10%;
     }
     .single .entry-top-wrapper{
 	width: 75rem;
+    }
+    .single .entry-summary{
+	box-shadow: -500px 0 0 0 #217872, 500px 0  0 0 #217872;
     }
     .single .entry-article-summary,
     .reading{
@@ -449,7 +461,7 @@
     }
 
     .single .entry-header {
-	min-height: 20rem;
+	min-height: 22rem;
     }
     /*big title image*/
     .single .entry-header,
@@ -463,8 +475,6 @@
     .single .entry-header img ~ .entry-top-wrapper .entry-summary{
 	text-align: right;
     }
-
-
     .entry-top-wrapper{
 	position: absolute;
 	bottom: 0;
@@ -472,7 +482,6 @@
     .entry-top-wrapper .entry-meta{
 	width: auto;
     }
-
     .goodtoknow {
 	margin: 5rem 6rem;
 	padding: 6rem 2rem;
@@ -483,8 +492,22 @@
 	width: 30%;
     }
     /*comments*/
+    .fb-comments-wrapper,
+    .comments-area{
+	padding: 1rem 0;
+    }
     .children{
 	margin-right: 11rem;
+    }
+    .comment-form{
+	width: 60rem;
+    }
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input,
+    .comment-form-comment textarea,
+    .form-submit{
+	width: 100%;
     }
     /* --------->>> Related Posts <<<--------*/
     .wp_rp_wrap {
@@ -494,68 +517,70 @@
     /* --------------------------------*/
     /* ------->>> Search Results<<<----*/
     /* --------------------------------*/
-    .search-no-results .no-results {
-	background-image: url("images/search_big.jpg");
-	padding-bottom: 34%;
+
+    .search-no-results .no-results .page-content {
+	margin: 0 auto;
+	max-width: 93rem;
+	position: relative;
     }
+    .search-no-results .no-results .page-content:before{
+	content: "";
+	background-image: url("images/search_image.png");
+	width: 14.5rem;
+	height: 24.8rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+    }
+
     .search-no-results .no-results h2,
-    .search-no-results .no-results p,
-    .search-no-results input.search-field[type="search"]{
-	padding-right: calc(50% - 35.5rem);
+    .search-no-results .no-results p{
+	padding: 0 20rem 0 0;
+    }
+    .search-no-results .no-results p span{
+	padding-left: 0;
+    }
+    .search-form{
+	margin-top: 8rem;
     }
 
     /* --------------------------------*/
     /* ---------->>> 404 Page<<<-------*/
     /* --------------------------------*/
-    .error404 .site-content {
+    body.error404 {
 	background-image: url("images/404_big.jpg");
-	background-position: right top;
-	/*	background-size: 100% auto;*/
-	padding: 6rem 0 33rem 0;
+	background-position: center top;
+	background-size: 115% auto;
     }
-    .error-404{
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	/*same code with prefix - for ios*/
-	display: -webkit-flex;
-	-webkit-justify-content: flex-end;
-	-webkit-align-items: center;
-	margin-left: 2%;
+    body.error404 .site-header {
+	padding: 4rem;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.20);
     }
-    .error-404-title{
-	margin-left: 5rem;
+    body.error404 .popover-parent-search,
+    body.error404 .popover-parent-a11y,
+    body.error404 .main-navigation{
+	display: none;
     }
 
+    /*in pages:*/
+    body.page .site-main .page{
+	padding: 0 2rem;
+    }
     /* --------------------------------*/
     /* ------->>>  ISSSUES  <<<--------*/
     /* --------------------------------*/
+    .category-all-issues .site-main {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 76.8rem;
+	padding: 0;
+    }
     .category-all-issues .entry-header{
-	width: 16%;
+	width: 22%;
+	margin-left: 3%;
     }
 
-    /* --------------------------------*/
-    /* ---------->>> 404 Page<<<-------*/
-    /* --------------------------------*/
-    .error404 .site-content {
-	background-image: url("images/404_big.jpg");
-	background-position: right top;
-	/*	background-size: 100% auto;*/
-	padding: 6rem 0 33rem 0;
-    }
-    .error-404{
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	/*same code with prefix - for ios*/
-	display: -webkit-flex;
-	-webkit-justify-content: flex-end;
-	-webkit-align-items: center;
-	margin-left: 2%;
-    }
-    .error-404-title{
-	margin-left: 5rem;
-    }
 }
 
 
@@ -578,8 +603,6 @@
 	padding: 4rem calc(50% - 47rem);
     }
     .footer-logos{
-	/*	padding-right: calc(50% - 40rem);
-		padding-left: calc(50% - 40rem);*/
 	padding-right: 20rem;
 	padding-left: 20rem;
     }
@@ -603,13 +626,9 @@
     .block-columns_and_opinions .entry-meta{
 	display: block;
 	float: right;
-	max-width: 9rem;
+	max-width: 10rem;
 	width: 100%;
 	margin: 0.3rem 0 0 2rem;
-    }
-    .block.block-columns_and_opinions .entry-title,
-    .block.block-columns_and_opinions .entry-summary{
-	/*display: inline;*/
     }
     .block-fast_science .article-wrapper .post {
 	width: 18%;
@@ -623,7 +642,7 @@
     .home .issues-wrapper .entry-header:last-of-type{
 	display: block;
     }
-    .issues-wrapper .entry-header{
+    .home .issues-wrapper .entry-header{
 	width: 23%;
     }
     .more-issues{
@@ -632,16 +651,15 @@
     /* --------->>> Block  Columns and Opinions <<<--------*/
 
     /* -----------------------------------*/
-    /* --------->>> Tag list <<<--------*/
+    /* ------>>> Tag list - Archive <<<---*/
     /* -----------------------------------*/
-    body.archive:not(.one-issue) .site-content,
-    body.search-results .site-content,
-    .page .site-content{
+    body:not(.home):not(.single):not(.one-issue):not(.error404) .site-content{
 	width: 94rem;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
     }
     body.tag-fast_science .site-content .post{
-	width: 18%;
+	width: 19%;
 	margin-left: 1%;
     }
     /* -----------------------------------*/
@@ -668,19 +686,37 @@
     .reading{
 	padding: 1rem calc( 50% - 44rem);
     }
+    /*comments*/
+    .comment-form{
+	width: 100%;
+    }
+    .comment-form-author, 
+    .comment-form-email, 
+    .comment-form-url {
+	width: 31%;
+	float: right;
+	margin-left: 3.5%;
+    }
+    .comment-form-url {
+	margin-left: 0;
+    }
+    .comment-form-comment{
+	clear: both;
+    }
     /* --------------------------------*/
-    /* ------->>>  ISSSUES  <<<--------*/
+    /* --------->>>  Page  <<<---------*/
     /* --------------------------------*/
-    .category-all-issues .entry-header{
-	width: 22%;
-	margin-left: 1%;
+    /*in pages:*/
+    body.page .site-main .page{
+	padding: 0 6rem;
+    }
+    .page-authors-wrapper{
+	padding: 3rem 8rem;
     }
     /* --------------------------------*/
     /* ---------->>> 404 Page<<<-------*/
     /* --------------------------------*/
-    .error-404{
-	margin-left: 19%;
-    }
+
 
 
 }
@@ -706,13 +742,6 @@
     .footer-widgets {
 	padding: 4rem calc(50% - 60rem);
     }
-    .footer-logos{
-	max-width: 70rem;
-	/*	padding-right: calc(50% - 50rem);
-		padding-left: calc(50% - 50rem);*/
-	padding-right: 35rem;
-	padding-left: 35rem;
-    }
     .widget_text{
 	max-width: 100rem;
 	margin: 0 auto;
@@ -723,21 +752,13 @@
     .block-newest-posts .entry-title,
     .block-newest-posts .entry-meta,
     .block-newest-posts .entry-summary,
-    .block:not(.block-newest-posts):not(.block-latest-issues),
-    .footer-logos{
+    .block:not(.block-newest-posts):not(.block-latest-issues){
 	max-width: 118rem;
     }
     body.search-results .site-content{
 	width: 118rem;
     }
-    /* --------->>> Block Newst Post <<<--------*/
-    .block-newest-posts .article-wrapper{
-	margin-right: calc( 50% - 59rem);
-	margin-left: calc( 50% - 59rem);
-    }
-    .block-newest-posts .article-wrapper{
-	width: 118rem;
-    }
+
     /* --------->>> Block Latest-issues <<<--------*/
 
     .block.block-latest-issues{
@@ -753,10 +774,9 @@
 
     }
     /* -----------------------------------*/
-    /* --------->>> Tag list <<<--------*/
+    /* ------>>> Tag list - Archive <<<---*/
     /* -----------------------------------*/
-    body.archive:not(.one-issue) .site-content,
-    body.body.search-results .site-content{
+    body:not(.home):not(.single):not(.one-issue):not(.error404) .site-content{
 	width: 120rem;
 	margin: 0 auto;
     }
@@ -767,19 +787,43 @@
     .page h1.entry-title:before{
 	width: 95rem;
     }
+    /* ---------->>> Search Results<<<-------*/
+    body.search-results .site-main .post{
+	width: 24.5%;
+    }
+
+    /* --------------------------------*/
+    /* --------->>>  Page  <<<---------*/
+    /* --------------------------------*/
+    /*in pages:*/
+    body.page .site-main .page{
+	padding: 0 12rem;
+    }
+    .page-authors-wrapper{
+	padding: 3rem 12rem;
+    }
     /* --------------------------------*/
     /* ------->>>  ISSSUES  <<<--------*/
     /* --------------------------------*/
+    .category-all-issues .site-main{
+	max-width: 118rem;
+	margin-left: auto;
+	margin-right: auto;
+
+    }
     .category-all-issues .entry-header {
 	margin-left: 2%;
-	width: 14%;
+	width: 15%;
+    }
+    .category-all-issues .entry-header:last-of-type{
+	margin-left: 0;
     }
 
     /* --------------------------------*/
     /* ---------->>> 404 Page<<<-------*/
     /* --------------------------------*/
-    .error-404{
-	margin-left: 17%;
+    body.error404 {
+	background-size: cover;
     }
 
 

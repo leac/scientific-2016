@@ -18,7 +18,7 @@
 
 	<?php elseif ( is_search() ) : ?>
 
-    	<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'scientific-2016' ); ?></p>
+	<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'scientific-2016' ); ?><span><?php esc_html_e( 'try phisics :)', 'scientific-2016' ); ?></span></p>
 	    <?php get_search_form(); ?>
 
 	<?php else : ?>

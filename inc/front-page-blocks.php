@@ -83,7 +83,7 @@
 			if ( $echo_year ) {
 				/* write the year number, and wrap all issues of that year */
 				?>
-				<h2><?php echo $year->cat_name ?></h2>
+				<h2 class="year-issues"><?php echo $year->cat_name ?></h2>
 				<section class="issues-wrapper">
 				<?php } ?>
 

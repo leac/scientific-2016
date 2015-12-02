@@ -989,7 +989,8 @@ object {
 /* ------->>> logo-sprite.png <<<------*/
 .scientific-logo,
 .ort-logo,
-.search-btn{
+.search-btn,
+.a11y-btn{
     background-image: url('images/logo-sprite.png');
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -1007,12 +1008,10 @@ object {
 /*ort logo & scientific logo*/
 .scientific-logo,
 .ort-logo,
-.search-btn{
+.search-btn,
+.a11y-btn{
     width: 34rem;
     height: 14rem;
-    background-image: url('images/logo-sprite.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
     text-indent: -99999px;
     overflow-x: hidden;
     padding: 0;
@@ -1048,12 +1047,10 @@ body .responsive-menu{
     border-bottom: 0.1rem solid #000;
     padding-bottom: 3rem;
     margin-bottom: 3rem;
-
 }
 .site-footer .separator-element{
     border-bottom: 0;
     border-top: 0.1rem solid #000;
-
 }
 .separator-element:before{
     content: "";
@@ -1310,6 +1307,11 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     -webkit-transform: translate(-50%, -50%);
     z-index: -1;
 }
+.page-title:before,
+.page h1.entry-title:before,
+.more-articles-title:before{
+    top: 50%;
+}
 /*title icon*/
 .title-articles:after,
 .title-fast_science:after,
@@ -1402,7 +1404,8 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .nav-previous a,
 .nav-next a,
 .reply a,
-.form-submit input{
+.form-submit input,
+.issues-archive{
     background-color: #dfdfdf;
     padding: 1rem 1.5rem;
     color: #000;
@@ -1412,7 +1415,8 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .block footer a:after,
 .nav-previous a:after,
 .nav-next a:after,
-.reply a:after{
+.reply a:after,
+.issues-archive:after{
     content: "»";
     position: relative;
     bottom: 0.2rem;
@@ -1501,15 +1505,11 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     margin: 0;
     font-size: 3rem;
 }
-/*.single .entry-header img ~ .entry-top-wrapper .entry-title{
-    font-size: 2.2rem;
-}*/
 .entry-top-wrapper .entry-meta{
     background-color: #217872;
     float: left;
     font-size: 1.6rem;
     padding: 1rem;
-    /*until the image position will be soved:*/
     display: block;
     width: 100%;
 }
@@ -1533,10 +1533,7 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     background-color: #217872;
     color: #fff;
     margin-top: 0;
-    box-shadow: -500px 0 0 0 #217872, 500px 0  0 0 #217872;
-}
-.single .entry-summary p{
-    margin-bottom: 0;
+    /*box-shadow: -500px 0 0 0 #217872, 500px 0  0 0 #217872;*/
 }
 .single .entry-summary p{
     margin-bottom: 0;
@@ -1556,19 +1553,32 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     font-size: 2rem;
     line-height: 1.5;
     margin-top: 0.5rem;
+
+}
+.entry-content, 
+.entry-summary, 
+.page-content, 
+.comment-content,
+.reading{
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    white-space: normal;
 }
 /*post designed elements*/
+/* causes problems in ff:
 .single .entry-content > p:first-of-type:first-letter{
     font-size: 7rem;
     line-height: 1;
     color: #fff;
     box-shadow: 7px 0 0 0 #fff inset, 0 -14px 0 0 #fff inset, 0 -70px 0 0 #217872 inset;
-    /*-webkit-box-shadow: -10px 0 0 0 #fff inset, 0 -14px 0 0 #fff inset, 0 -70px 0 0 #217872 inset;*/
     -webkit-box-shadow: 0 -14px 0 0 #fff inset, 0 -70px 0 0 #217872 inset;
     padding: 0 0.9rem ;
     margin: 0 0 0 0.5rem;
     display: block;
 }
+*/
+
+
 .single .entry-content a{
     color: #e00572;
     text-decoration: underline;
@@ -1753,15 +1763,107 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
 .comment-form .comment-notes{
     display: none;
 }
-.comment-form label{
-    width: 9rem;
-    display: inline-block;
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url{
+    position: relative;
+    padding-right: 4rem;
 }
+.comment-form-author:before,
+.comment-form-email:before,
+.comment-form-url:before{
+    content: "";
+    background-image: url('images/icon4main.png');
+    background-position: -5px -454px;
+    width: 2rem;
+    height: 2.4rem;
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+}
+.comment-form-email:before{
+    background-position: -31px -456px;
+    width: 2.8rem;
+    height: 2rem;
+}
+.comment-form-url:before{
+    background-position: -62px -451px;
+    width: 2.7rem;
+    height: 2.7rem;
+}
+.comment-form .required{
+    float: right;
+    margin-left: 0.5rem;
+    color: #e00572;
+}
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment textarea{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #000;
+    border-color: #c8c8c8;
+    border-radius: 0;
+    padding: 0.9rem 0.7rem;
+    outline: none;
+    box-shadow: 0;
+    width: 20rem;
+    width: calc(90vw - 5rem);
+}
+.comment-form-comment textarea{
+    width: calc(90vw - 1rem)
+}
+
+
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label,
+.comment-form-comment label{
+    display: inline-block;
+    padding: 1rem 0.5rem 0 0;
+    color: #000;
+    font-size: 1.8rem;
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    opacity: 1;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s; 
+}
+.comment-form-url label,
+.comment-form-comment label{
+    padding-right: 1.1rem;
+}
+/*the lable animation is based on: http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/*/
+.comment-form-author input:focus + label,
+.input--filled.comment-form-author label,
+.comment-form-email input:focus + label,
+.input--filled.comment-form-email label,
+.comment-form-url input:focus + label,
+.input--filled.comment-form-url label,
+.comment-form-comment textarea :focus + label,
+.input--filled.comment-form-comment label{
+    opacity: 0;
+}
+
 .form-submit{
     text-align: left;
+    width: calc(90vw - 1rem);
 }
 .form-submit input,
 .form-submit input:hover{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
     border: medium none;
     border-radius: 0;
     box-shadow: none;
@@ -1770,9 +1872,11 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     text-shadow: none;
 }
 
+
 /* --------->>> Related Posts <<<--------*/
 .more-articles{
     text-align: center;
+    margin-top: 9rem;
 }
 .more-articles .title-articles{
     background-color: #fff;
@@ -1810,11 +1914,16 @@ body.rtl .gform_widget .gform_wrapper input[type="email"]{
     font-size: 1.8rem;
     line-height: 1.4;
 }
+/*edit button - just for admin but still need to look good :)*/
+.wp_rp_content div.wp_rp_footer a.wp_rp_edit,
+.wp_rp_content div.wp_rp_footer a.wp_rp_edit:hover{
+    background-color: #217772;
+}
 
 /* --------------------------------------------*/
 /* --------->>> Tag list - Archive< <<<--------*/
 /* --------------------------------------------*/
-body.archive:not(.one-issue) .site-content,
+body.tag .site-content,
 body.search-results .site-content,
 .page .site-content{
     padding: 0 2rem;
@@ -1838,22 +1947,23 @@ body.search-results .site-content,
 .nav-previous a{
     padding: 1rem 2rem 1rem 1rem;
 }
-.nav-previous a:after{
+.nav-previous a:after,
+.issues-archive:after{
     content: "«";
     left: 103%;
 } 
 
-.archive .site-content,
+.tag .site-content,
 .search .site-content{
     margin-top: 3rem;
 }
-.archive .entry-header,
+.tag .entry-header,
 .search .entry-header,
 .page .entry-header{
     position: relative;
 }
 .block .tags-links,
-.archive .tags-links,
+.tag .tags-links,
 .search .tags-links,
 .page .tags-links{
     background-color: #217772;
@@ -1867,18 +1977,18 @@ body.search-results .site-content,
     border-right: 1px solid #e5e5e5;
 }
 .block .tags-links a,
-.archive .tags-links a,
+.tag .tags-links a,
 .search .tags-links a,
 .page .tags-links a{
     color: inherit;
 }
-.archive .entry-content,
+.tag .entry-content,
 .search .entry-content{
     margin: 0;
     margin-top: 0.5rem;
 }
 
-.archive:not(.one-issue) .post,
+.tag .post,
 .search .post{
     margin-bottom: 8rem;
 }
@@ -1896,13 +2006,13 @@ body.search-results .site-content,
 .post-authors-wrapper .author .author-img{
     border: 1px solid #dfdfdf;
     width: 100%;
-    max-width: 9rem;
+    max-width: 10rem;
 }
 /*in columns_and_opinions posts list & in one issue & in home in block-columns_and_opinions the author pic and name need to be on the side*/
 body.tag-columns_and_opinions .post-authors-wrapper,
 .block-columns_and_opinions .post-authors-wrapper{
     float: right;
-    max-width: 9rem;
+    max-width: 10rem;
     margin: 0.8rem 0 0 1rem;    
 }
 /*about the authors - in the end of the post and in home page near top 5*/
@@ -1930,55 +2040,59 @@ body.tag-columns_and_opinions .post-authors-wrapper,
 /* --------------------------------*/
 /* ------->>> Search Results<<<----*/
 /* --------------------------------*/
-.search-no-results .no-results {
-    background-image: url("images/search_small.jpg");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    padding-bottom: 68%;
-    margin-top: 0;
+.search-no-results .page-title {
+    font-weight: 400;
 }
+
 .search-no-results .page-header{
     padding: 0 3rem;
 }
+
 .search-no-results .no-results h2,
 .search-no-results .no-results .page-content{
     margin-top: 0;
 }
 .search-no-results .no-results h2,
 .search-no-results .no-results p{
-    padding-right: 2rem;
+    padding: 0 8%;
+    font-weight: 400;
+    font-size: 2.4rem;
 }
 .search_query{
     color: #e4007b;
+    font-weight: 600;
+}
+.search-no-results .no-results p span{
+    font-size: 1.8rem;
+    display: block;
+    margin-top: 2rem;
+    padding-left: 5rem;
 }
 .search-form{
     z-index: 1;
     padding: 4rem 0;
     width:100%;
-    background-color: #dfdfdf;
-    box-shadow: 600px 0 0 0 #dfdfdf, -600px 0 0 0 #dfdfdf;
-    transition: 0.5s ease;
-    margin-top: 5rem;
+    background-color: #217772;
+    box-shadow: 400px 0 0 0 #217772, -400px 0 0 0 #217772;
+    margin-top: 5rem;	
 }
 input.search-field[type="search"] {
-    width: 100%;
+    width: 85%;
     background-color: transparent;
     font-size: 5rem;
     font-weight: 400;
     border: 0;
-    border-right: 1px solid #fff;
-    color: #424242;
+    color: #fff;
     padding-right: 2rem;
     outline: none;
 }
 /*over ridding the lable opacity*/
 .search-field::-webkit-input-placeholder{
-    color: #fff;
+    color: #bdd6d5;
     opacity: 1 !important;
 }
 .search-field::-moz-placeholder { /* WebKit browsers */
-    color: #fff;
+    color: #bdd6d5;
     opacity: 1 !important;
 }
 /*removing yellow background & black color text in chrome default input*/
@@ -1991,14 +2105,14 @@ input:-webkit-autofill:focus{
 .search-submit{
     display: none;
 }
-
 /* --------------------------------*/
-/* ------->>>  ISSSUES  <<<--------*/
+/* ----->>>  ALL Isuues  <<<-------*/
 /* --------------------------------*/
 .category-all-issues .site-main{
+    padding: 0 2rem;
     text-align: center;
 }
-.category-all-issues  h2{
+.category-all-issues  .year-issues{
     text-align: center;
     background-color: #217772;
     color: #fff;
@@ -2006,34 +2120,42 @@ input:-webkit-autofill:focus{
     display: inline-block;
     padding: 0.2rem 2rem;
 }
-.category-all-issues .issues-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /*same code with prefix - for iphone*/
-    display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    -webkit-justify-content: center;
-
-}
 .category-all-issues .entry-header{
-    width: 49%;
-    margin-left: 1%;
+    width: 70%;
+    text-align: right;
+    margin: 0 15% 7rem 15%;
 }
+.issues-archive{
+    padding: 1rem 3rem 1rem 1rem;
+}
+/*single issue*/
 .one-issue .site-main{
     text-align: center;
 }
 /* --------------------------------*/
 /* ---------->>> 404 Page<<<-------*/
 /* --------------------------------*/
-.error404 .site-content {
+html,
+.body{
+    height: 100%;
+}
+body.error404 {
+    background-color: #000;
     background-image: url("images/404_small.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: top center;
-    padding: 0 2rem 30rem;
+    background-size: 200% 190%;
+    min-height: 100%;
 }
-
+body.error404 .site-header {
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+    padding: 4rem 0;
+}
+.error-404{
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
 .error-404-title {
     color: rgba(211, 233, 255, 0.4);
     font-size: 14rem;
@@ -2043,15 +2165,16 @@ input:-webkit-autofill:focus{
 }
 .error-404 .page-content{
     color: #fff;
-
 }
 .error-404 .page-content p:first-of-type span{
     display: block;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.6rem;
+
 }
 .error-404 .page-content a{
     color: #ffde00;
+    text-decoration: underline;
 }
 
 /* --------------------------------*/
@@ -2062,38 +2185,8 @@ input:-webkit-autofill:focus{
     margin-bottom: 7rem;
     padding: 3rem 4rem;
 }
-/* --------------------------------*/
-/* ---------->>> 404 Page<<<-------*/
-/* --------------------------------*/
-.error404 .site-content {
-    background-image: url("images/404_small.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    padding: 0 2rem 30rem;
-}
 
-.error-404-title {
-    color: rgba(211, 233, 255, 0.4);
-    font-size: 14rem;
-    line-height: 1.2;
-    margin: 0;
-    mix-blend-mode: color-dodge;
-}
-.error-404 .page-content{
-    color: #fff;
 
-}
-.error-404 .page-content p:first-of-type span{
-    display: block;
-    font-weight: 600;
-    font-size: 2rem;
-}
-.error-404 .page-content a{
-    color: #ffde00;
-    text-decoration: underline;
-
-}
 
 
 /* ----------------------------------------------*/
@@ -2166,9 +2259,9 @@ input:-webkit-autofill:focus{
 	display: none;
     }
     /* ----------------------------------*/
-    /* --------->>> Tag  Page <<<--------*/
+    /* --------->>> Tag Page <<<--------*/
     /* ----------------------------------*/
-    .archive .post {
+    .tag .post {
 	clear: both;
 	overflow: hidden; /*needed because of the float*/
     }
@@ -2277,7 +2370,7 @@ input:-webkit-autofill:focus{
 	width: 45%;
     }
 
-    /*tag list*/
+    /*Tag list - Archive*/
     body.tag-fast_science .site-main{
 	justify-content: space-around;
 	-webkit-justify-content: space-aroundn;
@@ -2431,16 +2524,17 @@ input:-webkit-autofill:focus{
     }
 
     /* -----------------------------------*/
-    /* --------->>> Tag list <<<--------*/
+    /*---->>> Tag list - Archive   <<<----*/
     /* -----------------------------------*/
-    body.archive:not(.one-issue) .site-content,
-    body.search-results .site-content,
-    .page .site-content{
+    /*home, one issue and single has diffrant width than all the rest of the site
+      home & one issue has width in the block sections
+      single has diffrant width because of the length of the lines for reading*/
+    body:not(.home):not(.single):not(.one-issue):not(.error404) .site-content{
 	width: 80%;
 	margin: 0 auto;
 	padding: 0;
     }
-    .archive:not(.one-issue):not(.category-all-issues) .site-main,
+    .tag .site-main,
     .search-results .site-main,
     .page .article-wrapper{
 	display: flex;
@@ -2453,18 +2547,22 @@ input:-webkit-autofill:focus{
 
     }
     .page-header,
-    .posts-navigation,
-    .category-all-issues  h2,
-    .category h2/*this is for one issue until there will be a specific class for it*/{
+    .posts-navigation{
 	flex: 0 1 100%; /*to keep them im 100% width and not in the flex-wrap flow*/
 	-webkit-flex: 0 1 100%;
     }
-    body:not(.home):not(.single):not(.one-issue) .post{
-	width: 49%;
-	margin-right: 0.5%;
+
+    body.tag .post,
+    body.search-results .post,
+    .page .post{
+	width: 49.5%;
+	margin-left: 0.5%;
     }
-    .archive:not(.one-issue) .entry-content {
+    .tag .entry-content{
 	padding-left: 3rem;
+    }
+    .tag .entry-title{
+	padding-left: 1.5rem;
     }
     body.tag-fast_science .site-content .post{
 	width: 30%;
@@ -2481,6 +2579,7 @@ input:-webkit-autofill:focus{
     /* --------->>> Related Posts <<<--------*/
     .related_post{
 	display: flex;
+	display: -webkit-flex;
     }
     .related_post  li{
 	width: 33%;
@@ -2493,17 +2592,58 @@ input:-webkit-autofill:focus{
 	padding-left: 1.5rem;
     }
     /* --------------------------------*/
+    /* ------->>> Search Results<<<----*/
+    /* --------------------------------*/
+    .search-no-results .no-results h2,
+    .search-no-results .no-results p{
+	padding: 0 calc(50% - 18rem) 0;
+
+    }
+    /* --------------------------------*/
     /* ------->>>  ISSSUES  <<<--------*/
     /* --------------------------------*/
+    .category-all-issues .site-main{
+	/*	width: 80%;
+		padding: 0;
+		margin-right: 10%;
+		margin-left: 10%;*/
+
+    }
+    .category-all-issues .issues-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/*same code with prefix - for iphone*/
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-webkit-justify-content: center;
+
+    }
     .category-all-issues .entry-header{
-	width: 24%;
+	width: 30%;
+	margin-left: 3.33%;
+	margin-right: 0;
     }
 
     /* --------------------------------*/
     /* ---------->>> 404 Page<<<-------*/
     /* --------------------------------*/
-    .error404 .site-content {
-	padding-right: 12rem;
+    body.error404 {
+	background-position: bottom center;
+	background-size: cover;
+    }
+    .error-404 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-display: flex;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
+	padding: 2rem 0 0;
+	text-align: right;
+    }
+    .error-404-title{
+	margin-left: 2rem;
     }
 
 }
