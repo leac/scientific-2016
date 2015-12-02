@@ -88,9 +88,9 @@
 			define( 'FAST_SCIENCE_TAG_SLUG', 'fast_science' );
 			define( 'COLUMNS_OPINIONS_TAG_SLUG', 'columns_and_opinions' );
 			define( 'ALL_ISSUES_CATEGORY_ID', 13 );
-			define( 'ARTICLES_CAT_NAME', __( 'articles', 'scientific-2016' ) );
-			define( 'OPINIONS_CAT_NAME', __( 'opinions', 'scientific-2016' ) );
-			define( 'FAST_SCIENCE_CAT_NAME', __( 'fast_science', 'scientific-2016' ) );
+			define( 'ARTICLES_CAT_NAME', 'articles' );
+			define( 'OPINIONS_CAT_NAME', 'opinions' );
+			define( 'FAST_SCIENCE_CAT_NAME', 'quick-science' );
 		}
 
 	endif; // scientific_2016_setup

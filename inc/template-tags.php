@@ -191,7 +191,7 @@
 			$top_parent = scientific_2016_category_top_parent_id( $curr_cat );
 			if ( $top_parent == ALL_ISSUES_CATEGORY_ID /* && $query->is_main_query() */ ) {
 				/* In specific issues we have to get posts by subcategories.
-				 * So get the subcategories of the specific issue, and set the category__in as the articles subcategory */
+				 * So get the subcategories of the specific issue, and set the cat as the articles subcategory */
 				$issue_sub_categories = get_categories( 'parent=' . $curr_cat );
 				if ( count( $issue_sub_categories ) > 0 ) {
 					set_query_var( 'issue_sub_categories', $issue_sub_categories );
@@ -201,11 +201,17 @@
 								return true;
 							}
 						} ) );
+					/* Only in articles sub category we want to set the cat on pre_get_posts.
+					 * The other sub categories will have their own queries			 */
 					if ( count( $article_sub_cat_arr ) > 0 ) {
-						$query->set( 'category__in', $article_sub_cat_arr[0]->cat_ID );
-						set_query_var( 'first_issue_category', $article_sub_cat_arr[0] );
+						if ( $article_sub_cat_arr == $curr_cat ) {
+							echo $article_sub_cat_arr[0]->cat_ID;
+							$query->set( 'cat', $article_sub_cat_arr[0]->cat_ID );
+							set_query_var( 'first_issue_category', $article_sub_cat_arr[0] );
+						}
 					}
-				} $query->set( 'posts_per_page', -1 );
+				}
+				$query->set( 'posts_per_page', -1 );
 			}
 		}
 	}

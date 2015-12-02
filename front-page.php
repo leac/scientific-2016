@@ -62,7 +62,7 @@ get_header();
 		<a href="<?php echo get_category_link( ALL_ISSUES_CATEGORY_ID ); ?> "><?php _e( 'Older issues', 'scientific-2016' ) ?></a>
 	    </header>
 	    <div class="issues-wrapper clear">
-		<?php scientific_2016_display_latest_issues( 5, false );
+		<?php scientific_2016_display_latest_issues( 3, false );
 		?>
 		<a class="more-issues" href="<?php echo get_category_link( ALL_ISSUES_CATEGORY_ID ); ?> ">
 		    <?php _e( 'Older issues', 'scientific-2016' ) ?>

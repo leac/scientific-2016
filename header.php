@@ -16,7 +16,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
 		<?php wp_head(); ?>
     </head>
 
@@ -39,20 +38,24 @@
 							<h1 class="site-title scientific-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
 							<p class="site-title scientific-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-<?php endif; ?>
+					<?php endif; ?>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'scientific-2016' ); ?></button>
-<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
 				</div><!-- .site-branding -->
 
 				<div class="left-header">
 					<a class="ort-logo" href="http://www.ort.org.il"><?php _e( 'Ort site', 'scientific-2016' ) ?></a>
-					<div class="popover_parent">
+					<div class="popover-parent-search">
 						<a href="javascript:void(0)" class="search-btn"><?php _e( '?', 'scientific-2016' ) ?></a>
-<?php get_search_form(); ?>
+						<?php get_search_form(); ?>
+					</div>
+					<div class="popover-parent-a11y">
+						<a href="javascript:void(0)" class="a11y-btn"><?php _e( 'a11y', 'scientific-2016' ) ?></a>
+						<?php apply_filters( 'mop_accessibility_add', '' ); ?>
 					</div>
 
 					<?php
@@ -61,7 +64,7 @@
 //							echo do_shortcode( '[ssba]' );
 //						}
 					?>
-<!--					<a href="<?php //comments_link();  ?>">
+<!--					<a href="<?php //comments_link();           ?>">
 						Comments to this post
 					</a>-->
 				</div>
