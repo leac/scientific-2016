@@ -290,7 +290,7 @@
     .block:not(.block-newest-posts) .entry-summary{
 	padding-left: 3rem;
     }
-        
+
     .block-newest-posts .entry-title,
     .block-newest-posts .entry-meta,
     .block-newest-posts .entry-summary{
@@ -433,6 +433,10 @@
     /* -----------------------------------*/
     /* --------->>> Single Post <<<--------*/
     /* -----------------------------------*/
+    /* --------->>> Single Sticky Share buttons <<<--------*/
+    .sticky-details {
+	max-width: 65%;
+    }
     /*alignment ordering*/
     .single .entry-top-wrapper,
     .single .entry-content,
@@ -456,7 +460,8 @@
 	box-shadow: -500px 0 0 0 #217872, 500px 0  0 0 #217872;
     }
     .single .entry-article-summary,
-    .reading{
+    .reading,
+    .sticky-post-header.active{
 	padding: 1rem calc( 50% - 37rem);
     }
 
@@ -665,6 +670,7 @@
     /* -----------------------------------*/
     /* ----------->>> Single  <<<---------*/
     /* -----------------------------------*/
+    /* --------->>> Single Sticky Share buttons <<<--------*/
     /*alignment ordering*/
     .block-newest-posts .article-wrapper,
     .single .entry-top-wrapper,
@@ -683,7 +689,8 @@
 	width: 92rem;
     }
     .single .entry-article-summary,
-    .reading{
+    .reading,
+    .sticky-post-header.active{
 	padding: 1rem calc( 50% - 44rem);
     }
     /*comments*/
@@ -829,4 +836,60 @@
 
 }
 
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html{
+	font-size: 50%;
+	margin: 0 1rem;
+    }
+    body {
+	/*https://css-tricks.com/snippets/css/forcing-grayscale-printing/*/
+	/* IE4-8 and 9 (deprecated). */
+	filter: Gray();
+	/* SVG version for IE10, Chrome 17, FF3.5, 
+	   Safari 5.2 and Opera 11.6 */
+	filter: url('#grayscale'); 
+	/* CSS3 filter, at the moment Webkit only. Prefix it for
+	   future implementations */
+	-webkit-filter: grayscale(100%); 
+	filter: grayscale(100%); /* future-proof */
+    }
+    .site-branding{
+	display: block;
+    }
+
+    .site-header{
+	/*-webkit-print-color-adjust:exact;*/
+	/*forcing the background-image of the logo to print: http://www.jotaurdaneta.com/web/how-to-print-background-images-in-chrome/*/
+    }
+    .site-title{
+	font-size: 22px;
+	color: #aaa;
+	text-indent: 0;
+	line-height: 1;
+	width: 100%;
+	text-align: center;
+    }
+
+    .main-navigation,
+    .left-header,
+    .sticky-post-header.active,
+    .comments-area,
+    .fb-comments-wrapper,
+    .more-articles,
+    .footer-logos,
+    .footer-widgets{
+	display: none;
+    }
+    .sbttBacktotop{
+	display: none !important;
+    }
+    .separator-element::before,
+    .separator-element::after{
+	content: none;
+    }
+}
 

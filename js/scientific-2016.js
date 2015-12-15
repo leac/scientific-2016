@@ -33,6 +33,22 @@ jQuery( document ).ready( function ( $ ) {
 			} );
 		}
 	}
+	/* Sticky Header
+	 http://www.webdesignerdepot.com/2014/05/how-to-create-an-animated-sticky-header-with-css3-and-jquery */
+
+	//waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class
+	//from menu link slide 2 and adds it to menu link slide 1.
+	$( window ).scroll( function () {
+		if ( $( this ).scrollTop() > 1 ) {
+			$( '.sticky-post-header' ).addClass( 'active' );
+		} else {
+			$( '.sticky-post-header' ).removeClass( 'active' );
+
+		}
+
+	} );
+
+
 } );
 
 /*!
