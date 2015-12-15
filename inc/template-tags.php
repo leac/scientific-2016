@@ -81,9 +81,9 @@
 
 		$filtered_tags_list_arr = array_filter( $tags_list_arr, function($value) {
 			// we never want to show the tags: articles, columns_and_opinions, fast_science
-			if ( strstr( $value, __( ARTICLES_TAG_SLUG, 'scientific-2016' ) ) !== false ||
-				strstr( $value, __( FAST_SCIENCE_TAG_SLUG, 'scientific-2016' ) ) !== false ||
-				strstr( $value, __( COLUMNS_OPINIONS_TAG_SLUG, 'scientific-2016' ) ) !== false ) {
+			if ( strstr( $value, ARTICLES_TAG_SLUG ) !== false ||
+				strstr( $value, FAST_SCIENCE_TAG_SLUG ) !== false ||
+				strstr( $value, COLUMNS_OPINIONS_TAG_SLUG ) !== false ) {
 				return false;
 			}
 			return true;
@@ -186,12 +186,14 @@
 			  Since it has none, none will be retieved. */
 			$query->set( 'category__in', ALL_ISSUES_CATEGORY_ID );
 		}
-		elseif ( is_category() ) {
-			$curr_cat = get_query_var( 'cat' );
+		elseif ( is_category() && $query->is_main_query() ) {
+			$curr_cat = get_queried_object_id();
 			$top_parent = scientific_2016_category_top_parent_id( $curr_cat );
-			if ( $top_parent == ALL_ISSUES_CATEGORY_ID /* && $query->is_main_query() */ ) {
+			if ( $top_parent == ALL_ISSUES_CATEGORY_ID ) {
 				/* In specific issues we have to get posts by subcategories.
-				 * So get the subcategories of the specific issue, and set the cat as the articles subcategory */
+				 * So get the subcategories of the specific issue, and set the cat as the articles subcategory,
+				 * only in main query */
+
 				$issue_sub_categories = get_categories( 'parent=' . $curr_cat );
 				if ( count( $issue_sub_categories ) > 0 ) {
 					set_query_var( 'issue_sub_categories', $issue_sub_categories );
@@ -204,14 +206,11 @@
 					/* Only in articles sub category we want to set the cat on pre_get_posts.
 					 * The other sub categories will have their own queries			 */
 					if ( count( $article_sub_cat_arr ) > 0 ) {
-						if ( $article_sub_cat_arr == $curr_cat ) {
-							echo $article_sub_cat_arr[0]->cat_ID;
-							$query->set( 'cat', $article_sub_cat_arr[0]->cat_ID );
-							set_query_var( 'first_issue_category', $article_sub_cat_arr[0] );
-						}
+						$query->set( 'category__in', $article_sub_cat_arr[0]->cat_ID );
+						//$query->set( 'posts_per_page', 1 );
+						set_query_var( 'first_issue_category', $article_sub_cat_arr[0] );
 					}
 				}
-				$query->set( 'posts_per_page', -1 );
 			}
 		}
 	}
